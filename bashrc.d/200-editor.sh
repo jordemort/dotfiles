@@ -6,17 +6,21 @@ subl=$(type -P subl)
 if [ -x "$subl" ] ; then
 	export EDITOR="subl -w"
 else
-	[ -z "$RMATE_PORT" ] && export RMATE_PORT=52698
+	[ -z "$RMATE_PORT" ] && export RMATE_PORT=62985
 
 	if [ -z "$RMATE_HOST" ] && [ ! -z "$SSH_CONNECTION" ] ; then
 		# try to discover rmate via direct connection
 		ssh_host=${SSH_CONNECTION%% *}
-		bash -c "head -c0 < /dev/tcp/$ssh_host/$RMATE_PORT" 2>/dev/null && export RMATE_HOST=$SSH_HOST
+		if bash -c "head -c0 < /dev/tcp/$ssh_host/$RMATE_PORT" 2>/dev/null ; then
+			export RMATE_HOST=$SSH_HOST
+		fi
 	fi
 
 	if [ -z "$RMATE_HOST" ] ; then
 		# try to discover rmate via localhost (presumably an SSH tunnel)
-		bash -c "head -c0 < /dev/tcp/127.0.0.1/$RMATE_PORT" 2>/dev/null && export RMATE_HOST=127.0.0.1
+		if bash -c "head -c0 < /dev/tcp/127.0.0.1/$RMATE_PORT" 2>/dev/null ; then
+			export RMATE_HOST=127.0.0.1
+		fi
 	fi
 
 	if [ ! -z "$RMATE_HOST" ] ; then
