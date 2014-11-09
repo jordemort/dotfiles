@@ -12,7 +12,7 @@ else
 		# try to discover rmate via direct connection
 		ssh_host=${SSH_CONNECTION%% *}
 		if bash -c "head -c0 < /dev/tcp/$ssh_host/$RMATE_PORT" 2>/dev/null ; then
-			export RMATE_HOST=$SSH_HOST
+			export RMATE_HOST=$ssh_host
 		fi
 	fi
 
