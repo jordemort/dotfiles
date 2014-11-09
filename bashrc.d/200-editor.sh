@@ -10,7 +10,8 @@ else
 
 	if [ -z "$RMATE_HOST" ] && [ ! -z "$SSH_CONNECTION" ] ; then
 		# try to discover rmate via direct connection
-		bash -c "head -c0 < /dev/tcp/$SSH_HOST/$RMATE_PORT" 2>/dev/null && export RMATE_HOST=$SSH_HOST
+		ssh_host=${SSH_CONNECTION%% *}
+		bash -c "head -c0 < /dev/tcp/$ssh_host/$RMATE_PORT" 2>/dev/null && export RMATE_HOST=$SSH_HOST
 	fi
 
 	if [ -z "$RMATE_HOST" ] ; then
