@@ -1,0 +1,5 @@
+set skip-completed-text on
+set show-all-if-ambiguous on
+set show-all-if-unmodified on
+set page-completions off
+set expand-tilde on
