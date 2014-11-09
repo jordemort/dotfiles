@@ -30,12 +30,12 @@ fi
 
 # generate unique colors for user and host
 if [[ $TERM =~ "256color" ]]; then
-	user_index=$(($(echo $USERNAME | cksum | cut -c1-4) % ${#COLORS_256[@]}))
+	user_index=$(($(echo $USER | cksum | cut -c1-4) % ${#COLORS_256[@]}))
 	host_index=$(($(hostname -f | cksum | cut -c1-4) % ${#COLORS_256[@]}))
 	export USER_COLOR='\033[38;5;'${COLORS_256[${user_index}]}'m'
 	export HOST_COLOR='\033[38;5;'${COLORS_256[${host_index}]}'m'
 else
-	user_index=$(($(echo $USERNAME | cksum | cut -c1-4) % ${#COLORS_16[@]}))
+	user_index=$(($(echo $USER | cksum | cut -c1-4) % ${#COLORS_16[@]}))
 	host_index=$(($(hostname -f | cksum | cut -c1-4) % ${#COLORS_16[@]}))
 	export USER_COLOR='\033['${COLORS_16[${user_index}]}'m'
 	export HOST_COLOR='\033['${COLORS_16[${host_index}]}'m'
