@@ -1,6 +1,6 @@
 # colors!
 export CLICOLOR=1
-export COLOR_RESET='\033[0m'
+export COLOR_NONE='\033[0m'
 export COLOR_WHITE='\033[1;37m'
 export COLOR_BLACK='\033[0;30m'
 export COLOR_BLUE='\033[0;34m'
@@ -19,7 +19,7 @@ export COLOR_GRAY='\033[1;30m'
 export COLOR_LIGHT_GRAY='\033[0;37m'
 
 # lists all the colors
-alias colors="set | egrep 'COLOR_\w*' | sort"
+alias colors="set | grep '^COLOR_' | sort"
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then

@@ -3,12 +3,12 @@ function set_prompt()
 {
 	last_rc=$?
 	if [ "$last_rc" != "0" ] ; then
-		PS1="\[${COLOR_LIGHT_RED}\]${last_rc}!\[${COLOR_RESET}\] "
+		PS1="\[${COLOR_LIGHT_RED}\]${last_rc}!\[${COLOR_NONE}\] "
 	else
 		PS1=""
 	fi
 
-	PS1="${PS1}\u@\h:\w"
+	PS1="${PS1}\u\[${COLOR_GRAY}\]@\[${COLOR_NONE}\]\h\[${COLOR_GRAY}\]:\[${COLOR_NONE}\]\w"
 	branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
 
 	if [ ! -z "$branch" ] ; then
@@ -23,9 +23,9 @@ function set_prompt()
 				color=$COLOR_RED
 			fi
 		fi
-		PS1="${PS1} \[${color}\]${branch}\[${COLOR_RESET}\]"
+		PS1="${PS1} \[${color}\]${branch}"
 	fi
-	PS1="${PS1}\$ "
+	PS1="${PS1}\[${COLOR_GRAY}\]\$\[${COLOR_NONE}\] "
 
 	export PS1
 }
