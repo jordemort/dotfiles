@@ -17,7 +17,7 @@ shopt -s histappend
 alias jobs="jobs -l"
 
 # give nslookup some line editing
-if [! -z "$(type -P rlwrap)" ] ; then
+if [ ! -z "$(type -P rlwrap)" ] ; then
 	alias nslookup='rlwrap nslookup'
 fi
 
