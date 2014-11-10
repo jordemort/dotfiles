@@ -42,7 +42,7 @@ function set_prompt()
 
 	# add host and cwd to window title
 	if [ "$use_set_title" == "yes" ] ; then
-		PS1="${PS1}\033]0;\h: \w\007"
+		PS1="${PS1}\[\033]0;\h: \w\007\]"
 	fi
 
 	export PS1
