@@ -1,0 +1,6 @@
+[submodule "rmate"]
+	path = rmate
+	url = https://github.com/jordemort/rmate.git
+[submodule "lesspipe"]
+	path = lesspipe
+	url = https://github.com/Distrotech/lesspipe.git
