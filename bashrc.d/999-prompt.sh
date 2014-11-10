@@ -40,13 +40,10 @@ function set_prompt()
 	fi
 	PS1="${PS1}\[${COLOR_GRAY}\]\$\[${COLOR_NONE}\] "
 
-	# add host and cwd to window title
 	if [ "$use_set_title" == "yes" ] ; then
-		if [ -z "$SSH_CONNECTION" ] ; then
-			PS1="${PS1}\[\033]7;file://$(pwd)/\007\]"
-		else
-			PS1="${PS1}\[\033]6;\007\]"
-		fi
+		# add proxy icon to title bar (for Terminal.app)
+		PS1="${PS1}\[\033]7;file://${HOSTNAME}/$(pwd)/\007\]"
+		# add host and cwd to window title
 		PS1="${PS1}\[\033]0;\u@\h: \w\007\]"
 	fi
 
