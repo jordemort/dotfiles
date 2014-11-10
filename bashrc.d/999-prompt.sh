@@ -42,7 +42,12 @@ function set_prompt()
 
 	# add host and cwd to window title
 	if [ "$use_set_title" == "yes" ] ; then
-		PS1="${PS1}\[\033]0;\h: \w\007\]"
+		if [ -z "$SSH_CONNECTION" ] ; then
+			PS1="${PS1}\[\033]7;file://$(pwd)/\007\]"
+		else
+			PS1="${PS1}\[\033]7;\007\]"
+		fi
+		PS1="${PS1}\[\033]0;\u@\h: \w\007\]"
 	fi
 
 	export PS1
