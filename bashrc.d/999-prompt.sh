@@ -45,7 +45,7 @@ function set_prompt()
 		if [ -z "$SSH_CONNECTION" ] ; then
 			PS1="${PS1}\[\033]7;file://$(pwd)/\007\]"
 		else
-			PS1="${PS1}\[\033]7;\007\]"
+			PS1="${PS1}\[\033]6;\007\]"
 		fi
 		PS1="${PS1}\[\033]0;\u@\h: \w\007\]"
 	fi
