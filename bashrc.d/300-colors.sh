@@ -1,5 +1,8 @@
-# colors!
+# pour le Mac
 export CLICOLOR=1
+export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
+
+# colors!
 export COLOR_NONE='\033[0m'
 export COLOR_BLACK='\033[0;30m'
 export COLOR_RED='\033[0;31m'
@@ -22,9 +25,16 @@ export COLOR_WHITE='\033[1;37m'
 alias colors="set | grep '^COLOR_' | sort"
 
 # enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+dircolors=$(type -P dircolors)
+if [ ! -z "$dircolors" ] ; then
+	eval "$(dircolors -b $HOME/.homesick/repos/dotfiles/dircolors-solarized/dircolors.256dark)"
+fi
+
+if ls --version 2>/dev/null | grep -q GNU ; then
     alias ls='ls --color=auto'
+fi
+
+if grep --version 2>/dev/null | grep -q GNU ; then
     alias grep='grep --color=auto'
 fi
 

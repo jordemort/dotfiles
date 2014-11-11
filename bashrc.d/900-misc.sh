@@ -30,9 +30,7 @@ fi
 source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
 
 # load less filter if available
-if [ ! -z "$(type -P lesspipe)" ] ; then
-	eval `lesspipe`
-fi
+export LESSOPEN="|$HOME/.homesick/repos/dotfiles/bin/pyg-lesspipe.sh %s"
 
 # keep less from clearing the screen, display line numbers and ANSI colors
 export LESS=-XMR
@@ -44,3 +42,7 @@ if [ ! -z "$(type -P boot2docker)" ] ; then
 		eval $(boot2docker shellinit 2> /dev/null)
 	fi
 fi
+
+# custom python libs
+export PYTHONPATH="$HOME/.homesick/repos/dotfiles/python"
+

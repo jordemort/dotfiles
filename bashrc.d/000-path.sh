@@ -4,6 +4,7 @@ PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
 pre_path=(
 	"/opt/X11/bin"
+	"/opt/local/libexec/gnubin"
 	"/opt/local/bin"
 	"/opt/local/sbin"
 	"$HOME/Library/Python/2.7/bin"
