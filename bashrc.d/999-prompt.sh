@@ -23,20 +23,17 @@ function set_prompt()
 	PS1="${PS1}\[${USER_COLOR}\]\u\[${COLOR_GRAY}\]@\[${HOST_COLOR}\]\h\[${COLOR_GRAY}\]:\[${COLOR_NONE}\]\w"
 
 	# add the git branch
-	branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
-	if [ ! -z "$branch" ] ; then
-		status=$(git status -s | grep -v '^!!' 2>/dev/null)
-		if [ -z "$status" ] ; then
-			color=$COLOR_GREEN
+	git_dir=$(git rev-parse --show-toplevel 2> /dev/null)
+	if [ ! -z "$git_dir" ] ; then
+		status_dir="$HOME/.git-prompt-status${git_dir}"
+		mkdir -p "$status_dir"
+		# do this asynchronously so it doesn't delay the prompt too much on slow remote FS
+		(update-git-status.sh "$git_dir" "$status_dir" &)
+		if [ -e "$status_dir/current" ] ; then
+			PS1="${PS1} $(cat $status_dir/current)"
 		else
-			status=$(echo "$status" | grep -v '^??')
-			if [ -z "$status" ] ; then
-				color=$COLOR_YELLOW
-			else
-				color=$COLOR_RED
-			fi
+			PS1="${PS1} \[${COLOR_NONE}\]..."
 		fi
-		PS1="${PS1} \[${color}\]${branch}"
 	fi
 	PS1="${PS1}\[${COLOR_GRAY}\]\$\[${COLOR_NONE}\] "
 
