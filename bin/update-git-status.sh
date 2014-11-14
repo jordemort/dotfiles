@@ -10,8 +10,8 @@ touch "$status_dir/working"
 
 cd $git_dir
 
-branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
-status=$(git status -s | grep -v '^!!' 2>/dev/null)
+branch=$($(type -P git) rev-parse --abbrev-ref HEAD 2>/dev/null)
+status=$($(type -P git) status -s | grep -v '^!!' 2>/dev/null)
 
 if [ -z "$status" ] ; then
 	color=$COLOR_GREEN

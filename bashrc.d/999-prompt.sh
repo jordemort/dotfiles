@@ -28,7 +28,7 @@ function set_prompt()
 		# this will mess up a bit on submodules but I don't care
 		git_dir=$last_git_dir
 	else
-		git_dir=$(git rev-parse --show-toplevel 2> /dev/null)
+		git_dir=$($(type -P git) rev-parse --show-toplevel 2> /dev/null)
 	fi
 	if [ ! -z "$git_dir" ] ; then
 		status_dir="$HOME/.git-prompt-status${git_dir}"
