@@ -8,6 +8,7 @@ Various fun stuff. Includes:
 - LESSOPEN: tries pygments first, then falls back to lesspipe
 - PROMPT:
 	- git branch and status (indicated by color)
+		- generated in the background so you don't have to wait for your prompt on slow remote filesystems
 	- username and hostname colored base on hash
 		- unique predictable color for each username and host
 - TITLEBAR:
