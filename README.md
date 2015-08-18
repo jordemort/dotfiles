@@ -19,3 +19,4 @@ Various fun stuff. Includes:
 	- "get out of my way" tmux configuration
 	- automatic tmux on SSH sessions
 	- automatic reconnect to detached tmux sessions
+foo
