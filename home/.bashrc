@@ -7,3 +7,7 @@ homeshick --quiet refresh
 for rc in "$HOME/.homesick/repos/dotfiles/bashrc.d/"* ; do
 	source $rc
 done
+
+if [ -e "$HOME/.bashrc.local" ] ; then
+    . $HOME/.bashrc.local
+fi
