@@ -1,12 +1,6 @@
-[submodule "rmate"]
-	path = rmate
-	url = https://github.com/jordemort/rmate.git
 [submodule "lesspipe"]
 	path = lesspipe
 	url = https://github.com/Distrotech/lesspipe.git
-[submodule "solarized-dark-pygments"]
-	path = solarized-dark-pygments
-	url = https://github.com/gthank/solarized-dark-pygments
-[submodule "dircolors-solarized"]
-	path = dircolors-solarized
-	url = https://github.com/seebi/dircolors-solarized.git
+[submodule "rmate"]
+	path = rmate
+	url = https://github.com/aurora/rmate.git

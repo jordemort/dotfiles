@@ -9,6 +9,7 @@ esac
 # fancy-ish prompt
 in_set_prompt=no
 last_git_dir='none'
+
 function set_prompt()
 {
 	last_rc=$?
@@ -23,31 +24,9 @@ function set_prompt()
 
 	PS1="${PS1}\[${USER_COLOR}\]\u\[${COLOR_GRAY}\]@\[${HOST_COLOR}\]\h\[${COLOR_GRAY}\]:\[${COLOR_NONE}\]\w"
 
-	# add the git branch
-	if [[ "$PWD" == ${last_git_dir}/* ]] ; then
-		# this will mess up a bit on submodules but I don't care
-		git_dir=$last_git_dir
-	else
-		git_dir=$($(type -P git) rev-parse --show-toplevel 2> /dev/null)
-	fi
-	if [ ! -z "$git_dir" ] ; then
-		status_dir="$HOME/.git-prompt-status${git_dir}"
-		mkdir -p "$status_dir"
-		if [ "$just_ran_git" == "yes" ] || [ "$git_dir" != "$last_git_dir" ] ; then
-			# the first time, or after running git, take the time to get it right
-			update-git-status.sh "$git_dir" "$status_dir"
-		else
-			# other times, do it async do we don't hold up the prompt
-			(update-git-status.sh "$git_dir" "$status_dir" &)
-		fi
-		if [ -e "$status_dir/current" ] ; then
-			PS1="${PS1} $(cat $status_dir/current)"
-		else
-			PS1="${PS1} \[${COLOR_NONE}\]..."
-		fi
-		last_git_dir=$git_dir
-		just_ran_git=no
-	fi
+	# git stuff here eventually
+
+	# append le dolla
 	PS1="${PS1}\[${COLOR_GRAY}\]\$\[${COLOR_NONE}\] "
 
 	if [ "$use_set_title" == "yes" ] ; then

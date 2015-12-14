@@ -29,20 +29,5 @@ fi
 # load homeshick completions
 source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
 
-# load less filter if available
-export LESSOPEN="|$HOME/.homesick/repos/dotfiles/bin/pyg-lesspipe.sh %s"
-
 # keep less from clearing the screen, display line numbers and ANSI colors
 export LESS=-XMR
-
-# set up boot2docker
-if [ ! -z "$(type -P boot2docker)" ] ; then
-	docker_status=$(boot2docker status)
-	if [ "$docker_status" == "running" ] ; then
-		eval $(boot2docker shellinit 2> /dev/null)
-	fi
-fi
-
-# custom python libs
-export PYTHONPATH="$HOME/.homesick/repos/dotfiles/python"
-

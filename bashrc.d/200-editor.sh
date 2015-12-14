@@ -5,6 +5,7 @@ subl=$(type -P subl)
 
 if [ -x "$subl" ] ; then
 	export EDITOR="subl -w"
+	alias nano="subl"
 else
 	[ -z "$RMATE_PORT" ] && export RMATE_PORT=62985
 
@@ -26,6 +27,7 @@ else
 	if [ ! -z "$RMATE_HOST" ] ; then
 		export EDITOR="rmate -w"
 		alias subl="rmate"
+		alias nano="rmate"
 	fi
 fi
 
