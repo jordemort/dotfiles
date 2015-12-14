@@ -27,7 +27,7 @@ alias colors="set | grep '^COLOR_' | sort"
 # enable color support of ls and also add handy aliases
 dircolors=$(type -P dircolors)
 if [ ! -z "$dircolors" ] ; then
-	eval "$(dircolors -b $HOME/.homesick/repos/dotfiles/dircolors-solarized/dircolors.256dark)"
+	eval "$(dircolors -b)"
 fi
 
 if ls --version 2>/dev/null | grep -q GNU ; then
