@@ -1,3 +1,14 @@
+# load git stuff
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWUNTRACKEDFILES=1
+GIT_PS1_SHOWUPSTREAM=verbose
+GIT_PS1_SHOWCOLORHINTS=1
+
+source "$HOME/.homesick/repos/dotfiles/bin/git-prompt.sh"
+
+echo hi
+__git_ps1
+
 # figure out if we're setting window titles
 use_set_title=no
 case $TERM in
@@ -17,26 +28,24 @@ function set_prompt()
 
 	# add a red ! to the beginning if the last command failed
 	if [ "$last_rc" != "0" ] ; then
-		PS1="\[${COLOR_LIGHT_RED}\]${last_rc}! "
+		PS1_BEFORE="\[${COLOR_LIGHT_RED}\]${last_rc}! "
 	else
-		PS1=""
+		PS1_BEFORE=""
 	fi
 
-	PS1="${PS1}\[${USER_COLOR}\]\u\[${COLOR_GRAY}\]@\[${HOST_COLOR}\]\h\[${COLOR_GRAY}\]:\[${COLOR_NONE}\]\w"
-
-	# git stuff here eventually
+	PS1_BEFORE="${PS1_BEFORE}\[${USER_COLOR}\]\u\[${COLOR_GRAY}\]@\[${HOST_COLOR}\]\h\[${COLOR_GRAY}\]:\[${COLOR_NONE}\]\w"
 
 	# append le dolla
-	PS1="${PS1}\[${COLOR_GRAY}\]\$\[${COLOR_NONE}\] "
+	PS1_AFTER="\[${COLOR_GRAY}\]\$\[${COLOR_NONE}\] "
 
 	if [ "$use_set_title" == "yes" ] ; then
 		# add proxy icon to title bar (for Terminal.app)
-		PS1="${PS1}\[\033]7;file://${HOSTNAME}/$(pwd)/\007\]"
+		PS1_AFTER="${PS1_AFTER}\[\033]7;file://${HOSTNAME}/$(pwd)/\007\]"
 		# add host and cwd to window title
-		PS1="${PS1}\[\033]0;\u@\h: \w\007\]"
+		PS1_AFTER="${PS1_AFTER}\[\033]0;\u@\h: \w\007\]"
 	fi
 
-	export PS1
+	__git_ps1 "${PS1_BEFORE}" "${PS1_AFTER}"
 	export PREV_COMMAND=""
 	history -a
 	in_set_prompt=no
