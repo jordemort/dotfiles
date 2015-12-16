@@ -31,3 +31,6 @@ source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
 
 # keep less from clearing the screen, display line numbers and ANSI colors
 export LESS=-XMR
+
+# use lessopen
+export LESSOPEN="|$HOME/.homesick/repos/dotfiles/bin/./lesspipe.sh %s"
