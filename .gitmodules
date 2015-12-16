@@ -1,6 +1,6 @@
-[submodule "lesspipe"]
-	path = lesspipe
-	url = https://github.com/Distrotech/lesspipe.git
 [submodule "rmate"]
 	path = rmate
 	url = https://github.com/aurora/rmate.git
+[submodule "lesspipe"]
+	path = lesspipe
+	url = https://github.com/wofr06/lesspipe.git
