@@ -6,9 +6,6 @@ GIT_PS1_SHOWCOLORHINTS=1
 
 source "$HOME/.homesick/repos/dotfiles/bin/git-prompt.sh"
 
-echo hi
-__git_ps1
-
 # figure out if we're setting window titles
 use_set_title=no
 case $TERM in
