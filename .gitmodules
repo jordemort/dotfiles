@@ -4,3 +4,6 @@
 [submodule "lesspipe"]
 	path = lesspipe
 	url = https://github.com/wofr06/lesspipe.git
+[submodule "diff-so-fancy"]
+	path = diff-so-fancy
+	url = https://github.com/stevemao/diff-so-fancy.git
