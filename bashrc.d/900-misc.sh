@@ -37,3 +37,8 @@ export LESS=-XMR
 
 # use lessopen
 export LESSOPEN="|$HOME/.homesick/repos/dotfiles/bin/./lesspipe.sh %s"
+
+# set debian env based on git
+export DEBFULLNAME=$(git config --global user.name)
+export DEBEMAIL=$(git config --global user.email)
+
