@@ -29,6 +29,9 @@ fi
 # load homeshick completions
 source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
 
+# load git completions
+source "$HOME/.homesick/repos/dotfiles/bin/git-completion.bash"
+
 # keep less from clearing the screen, display line numbers and ANSI colors
 export LESS=-XMR
 
