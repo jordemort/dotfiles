@@ -5,14 +5,15 @@ PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 pre_path=(
 	"$HOME/.homesick/repos/dotfiles/bin"
 	"$HOME/bin"
+	"$HOME/Library/Python/2.7/bin"
+	"$HOME/Library/Python/3.5/bin"
+    "$HOME/.local/bin"
 	"/opt/X11/bin"
 	"/opt/local/libexec/gnubin"
 	"/usr/local/opt/coreutils/libexec/gnubin"
 	"/opt/local/bin"
 	"/opt/local/sbin"
 	"/var/lib/gems/1.8/bin"
-	"$HOME/Library/Python/2.7/bin"
-	"$HOME/Library/Python/3.5/bin"
 )
 
 post_path=(
