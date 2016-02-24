@@ -21,10 +21,8 @@ if [ ! -z "$(type -P rlwrap)" ] ; then
 	alias nslookup='rlwrap nslookup'
 fi
 
-# load bash_completion
-if [ -f /etc/bash_completion ] ; then
-	source /etc/bash_completion
-fi
+# load misc completions
+source "$HOME/.homesick/repos/dotfiles/bash-completion/bash_completion"
 
 # load homeshick completions
 source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
