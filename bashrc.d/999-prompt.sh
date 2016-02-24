@@ -16,7 +16,6 @@ esac
 
 # fancy-ish prompt
 in_set_prompt=no
-last_git_dir='none'
 
 function set_prompt()
 {
@@ -31,8 +30,6 @@ function set_prompt()
 	fi
 
 	PS1_BEFORE="${PS1_BEFORE}\[${USER_COLOR}\]\u\[${COLOR_GRAY}\]@\[${HOST_COLOR}\]\h\[${COLOR_GRAY}\]:\[${COLOR_NONE}\]\w"
-
-	# append le dolla
 	PS1_AFTER="\[${COLOR_GRAY}\]\$\[${COLOR_NONE}\] "
 
 	if [ "$use_set_title" == "yes" ] ; then
@@ -42,8 +39,13 @@ function set_prompt()
 		PS1_AFTER="${PS1_AFTER}\[\033]0;\u@\h: \w\007\]"
 	fi
 
+	# gitify the prompt
 	__git_ps1 "${PS1_BEFORE}" "${PS1_AFTER}"
+
+	# reset this for use by set_title
 	export PREV_COMMAND=""
+
+	# append to history file so we never lose anything, and then we're done
 	history -a
 	in_set_prompt=no
 }
