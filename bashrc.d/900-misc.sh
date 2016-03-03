@@ -13,6 +13,9 @@ export HISTTIMEFORMAT="%Y-%m-%d %T "
 # append to history file, don't overwrite
 shopt -s histappend
 
+# save multi-line commands as one command
+shopt -s cmdhist
+
 # make jobs output useful
 alias jobs="jobs -l"
 
@@ -40,3 +43,9 @@ export LESSOPEN="|$HOME/.homesick/repos/dotfiles/bin/./lesspipe.sh %s"
 export DEBFULLNAME=$(git config --global user.name)
 export DEBEMAIL=$(git config --global user.email)
 
+# correct spelling on directory names
+shopt -s dirspell
+shopt -s cdspell
+
+# save some time changing directories
+export CDPATH=".:$HOME/Source:$HOME/GitHub"
