@@ -52,7 +52,7 @@ shopt -s dirspell
 shopt -s cdspell
 
 # save some time changing directories
-export CDPATH=".:$HOME/Source:$HOME/GitHub"
+CDPATH=".:$HOME/Source:$HOME/GitHub:$HOME/.homesick/repos"
 
 # if the command-not-found package is installed, use it
 if [ -x /usr/lib/command-not-found -o -x /usr/share/command-not-found/command-not-found ]; then
