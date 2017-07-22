@@ -42,8 +42,8 @@ function set_prompt()
 	# gitify the prompt
 	__git_ps1 "${PS1_BEFORE}" "${PS1_AFTER}"
 
-	# reset this for use by set_title
-	export PREV_COMMAND=""
+	# reset
+	PREV_COMMAND=""
 
 	# append to history file so we never lose anything, and then we're done
 	history -a
@@ -51,7 +51,7 @@ function set_prompt()
 }
 
 # update fancy prompt and append to history every command
-export PROMPT_COMMAND="set_prompt"
+PROMPT_COMMAND="set_prompt"
 
 # set window title to currently running command
 function set_title()
@@ -59,9 +59,9 @@ function set_title()
 	if [ "$use_set_title" != "yes" ] || [ "$in_set_prompt" == "yes" ] || [ "$@" == "set_prompt" ] || [ "$@" == "set_title" ] ; then
 		return
 	fi
-	export PREV_COMMAND=${PREV_COMMAND}${@}
+	PREV_COMMAND=${PREV_COMMAND}${@}
 	echo -ne "\033]0;${USER}@$(hostname -s): ${PREV_COMMAND}\007"
-	export PREV_COMMAND=${PREV_COMMAND}' | '
+	PREV_COMMAND=${PREV_COMMAND}' | '
 }
 
 trap 'set_title "$BASH_COMMAND"' DEBUG

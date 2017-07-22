@@ -3,12 +3,12 @@
 shopt -s checkwinsize
 
 # load last 1000 lines from history, never truncate, ignore dups
-export HISTSIZE=1000
-export HISTFILESIZE=
-export HISTCONTROL=ignoredups
+HISTSIZE=1000
+HISTFILESIZE=
+HISTCONTROL=ignoredups
 
 # timestamp history
-export HISTTIMEFORMAT="%Y-%m-%d %T "
+HISTTIMEFORMAT="%Y-%m-%d %T "
 
 # append to history file, don't overwrite
 shopt -s histappend
