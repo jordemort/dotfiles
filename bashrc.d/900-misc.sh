@@ -41,7 +41,7 @@ source "$HOME/.homesick/repos/dotfiles/bin/git-completion.bash"
 export LESS=-XMR
 
 # use lessopen
-export LESSOPEN="|$HOME/.homesick/repos/dotfiles/bin/./lesspipe.sh %s"
+export LESSOPEN="|lesspipe.sh %s"
 
 # set debian env based on git
 export DEBFULLNAME=$(git config --global user.name)
