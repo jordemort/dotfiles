@@ -56,15 +56,12 @@ export PROMPT_COMMAND="set_prompt"
 # set window title to currently running command
 function set_title()
 {
-	if [ "$in_set_prompt" == "yes" ] || [ "$@" == "set_prompt" ] || [ "$@" == "set_title" ] ; then
+	if [ "$use_set_title" != "yes" ] || [ "$in_set_prompt" == "yes" ] || [ "$@" == "set_prompt" ] || [ "$@" == "set_title" ] ; then
 		return
 	fi
-
 	export PREV_COMMAND=${PREV_COMMAND}${@}
 	echo -ne "\033]0;${USER}@$(hostname -s): ${PREV_COMMAND}\007"
 	export PREV_COMMAND=${PREV_COMMAND}' | '
 }
 
-if [ "$use_set_title" == "yes" ] ; then
-	trap 'set_title "$BASH_COMMAND"' DEBUG
-fi
+trap 'set_title "$BASH_COMMAND"' DEBUG
