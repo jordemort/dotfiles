@@ -10,3 +10,6 @@
 [submodule "lesspipe"]
 	path = lesspipe
 	url = https://github.com/wofr06/lesspipe.git
+[submodule "bash-it"]
+	path = bash-it
+	url = https://github.com/Bash-it/bash-it.git
