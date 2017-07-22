@@ -25,9 +25,9 @@ if [ ! -z "$(type -P rlwrap)" ] ; then
 fi
 
 # load misc completions
-if [ "${BASH_VERSINFO[0]}" -eq "4" ] && [ "${BASH_VERSINFO[1]}" -ge "1" ] ; then
+if [ "${BASH_VERSINFO[0]}" -gt "4" ] || [ "${BASH_VERSINFO[0]}" -eq "4" -a "${BASH_VERSINFO[1]}" -ge "1" ] ; then
 	source "$HOME/.homesick/repos/dotfiles/bash-completion/bash_completion"
-elif [ -e "/etc/bash_completion"] ; then
+elif [ -e "/etc/bash_completion" ] ; then
 	source "/etc/bash_completion"
 fi
 
@@ -48,7 +48,9 @@ export DEBFULLNAME=$(git config --global user.name)
 export DEBEMAIL=$(git config --global user.email)
 
 # correct spelling on directory names
-shopt -s dirspell
+if [ "${BASH_VERSINFO[0]}" -gt "4" ] ; then
+	shopt -s dirspell
+fi
 shopt -s cdspell
 
 # save some time changing directories
