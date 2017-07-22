@@ -1,6 +1,6 @@
 # get homeshick set up
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
-homeshick -q -b refresh || homeshich -b refresh
+homeshick -q -b refresh || homeshick -b refresh
 
 # break the rest of bashrc out so any changes picked up
 # by homeshick refresh above are effective immediately
