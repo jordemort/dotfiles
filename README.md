@@ -13,10 +13,5 @@ Various fun stuff. Includes:
 - titlebar:
     - displays working directory or currently executing command
     - proxy icon for Mac OS X Terminal.app
-- autodetection of rmate availability, fallback to nano
-- tmux (not currently using this but find it in the attic):
-    - "get out of my way" tmux configuration
-    - automatic tmux on SSH sessions
-    - automatic reconnect to detached tmux sessions
 
 Intended for use with [homeshick](https://github.com/andsens/homeshick)
