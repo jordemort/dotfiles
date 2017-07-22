@@ -24,8 +24,11 @@ if [ ! -z "$(type -P rlwrap)" ] ; then
 	alias nslookup='rlwrap nslookup'
 fi
 
+
 # load misc completions
 if [ "${BASH_VERSINFO[0]}" -gt "4" ] || [ "${BASH_VERSINFO[0]}" -eq "4" -a "${BASH_VERSINFO[1]}" -ge "1" ] ; then
+	BASH_COMPLETION_USER_DIR="$HOME/.homesick/repos/dotfiles/bash-completion/completions"
+	BASH_COMPLETION_COMPAT_DIR="/var/empty"
 	source "$HOME/.homesick/repos/dotfiles/bash-completion/bash_completion"
 elif [ -e "/etc/bash_completion" ] ; then
 	source "/etc/bash_completion"
