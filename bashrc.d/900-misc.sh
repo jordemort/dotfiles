@@ -25,7 +25,11 @@ if [ ! -z "$(type -P rlwrap)" ] ; then
 fi
 
 # load misc completions
-source "$HOME/.homesick/repos/dotfiles/bash-completion/bash_completion"
+if [ "${BASH_VERSINFO[0]}" -eq "4" ] && [ "${BASH_VERSINFO[1]}" -ge "1" ] ; then
+	source "$HOME/.homesick/repos/dotfiles/bash-completion/bash_completion"
+elif [ -e "/etc/bash_completion"] ; then
+	source "/etc/bash_completion"
+fi
 
 # load homeshick completions
 source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
