@@ -9,7 +9,7 @@ source "$HOME/.homesick/repos/dotfiles/bin/git-prompt.sh"
 # figure out if we're setting window titles
 use_set_title=no
 case $TERM in
-	screen*|rxvt|*term|*term-256color)
+	screen*|rxvt|xterm*)
 		use_set_title=yes
 	;;
 esac
