@@ -13,3 +13,6 @@
 [submodule "bash-it"]
 	path = bash-it
 	url = https://github.com/Bash-it/bash-it.git
+[submodule "vboxmanage-bash-completion"]
+	path = vboxmanage-bash-completion
+	url = https://github.com/gryf/vboxmanage-bash-completion.git
