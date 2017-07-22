@@ -10,9 +10,15 @@
 [submodule "lesspipe"]
 	path = lesspipe
 	url = https://github.com/wofr06/lesspipe.git
-[submodule "bash-it"]
-	path = bash-it
-	url = https://github.com/Bash-it/bash-it.git
 [submodule "vboxmanage-bash-completion"]
 	path = vboxmanage-bash-completion
 	url = https://github.com/gryf/vboxmanage-bash-completion.git
+[submodule "vagrant-bash-completion"]
+	path = vagrant-bash-completion
+	url = https://github.com/brbsix/vagrant-bash-completion
+[submodule "pip-bash-completion"]
+	path = pip-bash-completion
+	url = https://github.com/ekalinin/pip-bash-completion
+[submodule "open-bash-completion"]
+	path = open-bash-completion
+	url = https://github.com/moshen/open-bash-completion

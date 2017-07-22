@@ -31,13 +31,13 @@ elif [ -e "/etc/bash_completion" ] ; then
 	source "/etc/bash_completion"
 fi
 
-# load homeshick completions
-source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
-
-# load git completions
+# load extra completions
+[[ -x "$(which aws_completer)" ]] && complete -C "$(which aws_completer)" aws
 source "$HOME/.homesick/repos/dotfiles/bin/git-completion.bash"
-
-# load virtualbox completions
+source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
+source "$HOME/.homesick/repos/dotfiles/open-bash-completion/open"
+source "$HOME/.homesick/repos/dotfiles/pip-bash-completion/pip"
+source "$HOME/.homesick/repos/dotfiles/vagrant-bash-completion/vagrant-bash-completion/etc/bash_completion.d/vagrant"
 source "$HOME/.homesick/repos/dotfiles/vboxmanage-bash-completion/VBoxManage"
 
 # keep less from clearing the screen, display line numbers and ANSI colors
