@@ -9,5 +9,5 @@ for rc in "$HOME/.homesick/repos/dotfiles/bashrc.d/"* ; do
 done
 
 if [ -e "$HOME/.bashrc.local" ] ; then
-    . $HOME/.bashrc.local
+	. $HOME/.bashrc.local
 fi

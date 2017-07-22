@@ -5,7 +5,6 @@ fi
 fortune=$(type -P fortune)
 
 if [ -x "${fortune}" ] ; then
-        fortune -a
-        echo
+	fortune -a
+	echo
 fi
-
