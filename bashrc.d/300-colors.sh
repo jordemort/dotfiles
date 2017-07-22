@@ -31,11 +31,11 @@ if [ ! -z "$dircolors" ] ; then
 fi
 
 if ls --version 2>/dev/null | grep -q GNU ; then
-    alias ls='ls --color=auto'
+	alias ls='ls --color=auto'
 fi
 
 if grep --version 2>/dev/null | grep -q GNU ; then
-    alias grep='grep --color=auto'
+	alias grep='grep --color=auto'
 fi
 
 # generate unique colors for user and host
