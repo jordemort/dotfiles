@@ -1,3 +1,4 @@
+#!bash
 rbenv=$(type -P rbenv)
 
 if [ -x "$rbenv" ] ; then

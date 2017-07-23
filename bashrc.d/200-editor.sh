@@ -1,3 +1,4 @@
+#!bash
 # no vi please
 export EDITOR="nano"
 
