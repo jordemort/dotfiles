@@ -40,8 +40,8 @@ if grep --version 2>/dev/null | grep -q GNU ; then
 fi
 
 # generate unique colors for user and host
-user_hash=$(echo $USER | cksum | cut -c1-4)
-host_hash=$(hostname -f | cksum | cut -c1-4)
+user_hash=$(echo $USER | cksum | cut -c2-5)
+host_hash=$(hostname -f | cksum | cut -c2-5)
 
 if [[ $TERM =~ "256color" ]]; then
 	user_index=$(($user_hash % ${#COLORS_256[@]}))
