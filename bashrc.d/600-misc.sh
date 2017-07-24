@@ -21,10 +21,9 @@ shopt -s cmdhist
 alias jobs="jobs -l"
 
 # give nslookup some line editing
-if [ ! -z "$(type -P rlwrap)" ] ; then
+if [ -n "$(type -P rlwrap)" ] ; then
 	alias nslookup='rlwrap nslookup'
 fi
-
 
 # load misc completions
 if [ "${BASH_VERSINFO[0]}" -gt "4" ] || [ "${BASH_VERSINFO[0]}" -eq "4" -a "${BASH_VERSINFO[1]}" -ge "1" ] ; then
@@ -36,7 +35,6 @@ if [ "${BASH_VERSINFO[0]}" -gt "4" ] || [ "${BASH_VERSINFO[0]}" -eq "4" -a "${BA
 elif [ -e "/etc/bash_completion" ] ; then
 	[ -z "$BASH_COMPLETION" ] && source "/etc/bash_completion"
 fi
-
 
 # load extra completions
 [[ -x "$(which aws_completer)" ]] && complete -C "$(which aws_completer)" aws
