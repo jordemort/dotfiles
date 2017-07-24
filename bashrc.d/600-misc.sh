@@ -20,6 +20,11 @@ shopt -s cmdhist
 # make jobs output useful
 alias jobs="jobs -l"
 
+# use hub instead of git if we have it
+if [ -n "$(type -P hub)" ] ; then
+	eval "$(hub alias -s)"
+fi
+
 # give nslookup some line editing
 if [ -n "$(type -P rlwrap)" ] ; then
 	alias nslookup='rlwrap nslookup'
