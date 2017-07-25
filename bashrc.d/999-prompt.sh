@@ -18,6 +18,24 @@ esac
 # fancy-ish prompt
 in_set_prompt=no
 
+function urlencode()
+{
+  # urlencode <string>
+  old_lc_collate=$LC_COLLATE
+  LC_COLLATE=C
+
+  local length="${#1}"
+  for (( i = 0; i < length; i++ )); do
+    local c="${1:i:1}"
+    case $c in
+      [a-zA-Z0-9.~_-]) printf "$c" ;;
+      *) printf '%%%02X' "'$c" ;;
+    esac
+  done
+
+  LC_COLLATE=$old_lc_collate
+}
+
 function set_prompt()
 {
 	last_rc=$?
@@ -34,10 +52,13 @@ function set_prompt()
 	PS1_AFTER="\[${COLOR_GRAY}\]\$\[${COLOR_NONE}\] "
 
 	if [ "$use_set_title" == "yes" ] ; then
-		# add proxy icon to title bar (for Terminal.app)
-		PS1_AFTER="${PS1_AFTER}\[\033]7;file://${HOSTNAME}/$(pwd)/\007\]"
-		# add host and cwd to window title
-		PS1_AFTER="${PS1_AFTER}\[\033]0;\u@\h: \w\007\]"
+		if [ "$TERM_PROGRAM" = "Apple_Terminal" ] ; then
+			# add proxy icon to title bar (for Terminal.app)
+			PS1_AFTER="${PS1_AFTER}\[\033]7;file://${HOSTNAME}/$(urlencode "$(pwd)")/\007\]\[\033]0;\007\]"
+		else
+			# add host and cwd to window title
+			PS1_AFTER="${PS1_AFTER}\[\033]0;\u@\h: \w\007\]"
+		fi
 	fi
 
 	# gitify the prompt
@@ -61,7 +82,11 @@ function set_title()
 		return
 	fi
 	PREV_COMMAND=${PREV_COMMAND}${@}
-	echo -ne "\033]0;${USER}@$(hostname -s): ${PREV_COMMAND}\007"
+	if [ "$TERM_PROGRAM" = "Apple_Terminal" ] ; then
+		echo -ne "\033]0;${PREV_COMMAND}\007"
+	else
+		echo -ne "\033]0;${USER}@$(hostname -s): ${PREV_COMMAND}\007"
+	fi
 	PREV_COMMAND=${PREV_COMMAND}' | '
 }
 
