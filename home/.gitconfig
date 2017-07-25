@@ -13,3 +13,5 @@
 	user = jordemort
 [credential]
 	helper = osxkeychain
+[branch]
+	autosetupmerge = true
