@@ -26,3 +26,6 @@
 	path = rmate
 	url = https://github.com/jordemort/rmate.git
 	branch = unix-socket
+[submodule "sempl"]
+	path = sempl
+	url = https://github.com/nextrevision/sempl
