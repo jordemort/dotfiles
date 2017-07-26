@@ -12,9 +12,13 @@ if [ -x "$atom" ] ; then
 	alias nano="atom"
 	alias subl="atom"
 elif [ -n "$RMATE_UNIX" ] ; then
-	export EDITOR="rmate -w"
-	alias nano="rmate"
-	alias subl="rmate"
+	if [ -z $(type -P nc) ] ; then
+		[ ! -e "$HOME/.shutup_about_nc" ] && echo "WARNING: No nc, rmate isn't going to work"
+	else
+		export EDITOR="rmate -w"
+		alias nano="rmate"
+		alias subl="rmate"
+	fi
 fi
 
 export VISUAL=$EDITOR
