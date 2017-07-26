@@ -1,9 +1,9 @@
 #!bash
 
 function cleanup_sockets() {
-  [ -S "$RMATE_UNIX" ] && [ "$RMATE_UNIX" = "$HOME/.rmate.$$" ] && rm -f "$RMATE_UNIX"
-  [ -S "$HOME/.gnupg/S.gpg-agent.remote.$$" ] && rm -f "$HOME/.gnupg/S.gpg-agent.$$"
-  other_gpg_agent=$(ls --sort=t $HOME/.gnupg/S.gpg-agent.remote.* | head -n1)
+  [ -e "$RMATE_UNIX" ] && [ "$RMATE_UNIX" = "$HOME/.rmate.$$" ] && rm -f "$RMATE_UNIX"
+  [ -e "$HOME/.gnupg/S.gpg-agent.remote.$$" ] && rm -f "$HOME/.gnupg/S.gpg-agent.remote.$$"
+  other_gpg_agent=$(ls --sort=t $HOME/.gnupg/S.gpg-agent.remote.* 2>/dev/null | head -n1)
   [ -n "$other_gpg_agent" ] && ln -sf "$other_gpg_agent" "$HOME/.gnupg/S.gpg-agent"
 }
 
