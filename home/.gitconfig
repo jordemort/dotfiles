@@ -15,3 +15,5 @@
 	helper = osxkeychain
 [branch]
 	autosetupmerge = true
+[gpg]
+	program = gpg2
