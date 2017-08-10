@@ -29,3 +29,6 @@
 [submodule "sempl"]
 	path = sempl
 	url = https://github.com/nextrevision/sempl
+[submodule "base64-in-bash"]
+	path = base64-in-bash
+	url = https://gist.github.com/7826322.git
