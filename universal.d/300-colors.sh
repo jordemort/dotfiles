@@ -30,27 +30,3 @@ dircolors=$(type -P dircolors)
 if [ ! -z "$dircolors" ] ; then
 	eval "$(dircolors -b)"
 fi
-
-if ls --version 2>/dev/null | grep -q GNU ; then
-	alias ls='ls --color=auto'
-fi
-
-if grep --version 2>/dev/null | grep -q GNU ; then
-	alias grep='grep --color=auto'
-fi
-
-# generate unique colors for user and host
-user_hash=$(echo $USER | cksum | cut -c2-5)
-host_hash=$(hostname -f | cksum | cut -c2-5)
-
-if [[ $TERM =~ "256color" ]]; then
-	user_index=$(($user_hash % ${#COLORS_256[@]}))
-	host_index=$(($host_hash % ${#COLORS_256[@]}))
-	USER_COLOR='\033[38;5;'${COLORS_256[${user_index}]}'m'
-	HOST_COLOR='\033[38;5;'${COLORS_256[${host_index}]}'m'
-else
-	user_index=$(($user_hash % ${#COLORS_16[@]}))
-	host_index=$(($host_hash % ${#COLORS_16[@]}))
-	USER_COLOR='\033['${COLORS_16[${user_index}]}'m'
-	HOST_COLOR='\033['${COLORS_16[${host_index}]}'m'
-fi
