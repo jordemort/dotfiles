@@ -78,7 +78,7 @@ else
 fi
 
 # Restore the terminal to cooked mode.
-stty "$saved_stty"
+stty "$saved_stty" 2>/dev/null
 
 # Extract the terminal name and version number from the response.
 version=$(version "${version_string}")
