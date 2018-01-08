@@ -1,7 +1,7 @@
 [user]
 	email = jordemort@github.com
 	name = Jordan Webb
-	signingkey = 158FACBF
+	signingkey = 47B6CE14
 [commit]
 	gpgsign = true
 [push]

@@ -16,12 +16,3 @@ fi
 # set debian env based on git
 export DEBFULLNAME=$(git config --global user.name)
 export DEBEMAIL=$(git config --global user.email)
-
-# correct spelling on directory names
-if [ "${BASH_VERSINFO[0]}" -gt "4" ] ; then
-	shopt -s dirspell
-fi
-shopt -s cdspell
-
-# save some time changing directories
-CDPATH=".:$HOME:$HOME/Source:$HOME/GitHub:$HOME/.homesick/repos"

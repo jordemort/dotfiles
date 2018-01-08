@@ -15,13 +15,6 @@ case $TERM in
 	;;
 esac
 
-# detect iTerm2
-if $HOME/.homesick/repos/dotfiles/iterm/isiterm2.sh ; then
-	is_iterm2=yes
-else
-	is_iterm2=no
-fi
-
 # fancy-ish prompt
 in_set_prompt=no
 
@@ -55,11 +48,6 @@ function set_prompt()
 		PS1_BEFORE=""
 	fi
 
-	if [ "$is_iterm2" = "yes" ] ; then
-		echo -ne "\033]133;D;$last_rc\033\\"
-	fi
-
-
 	PS1_BEFORE="${PS1_BEFORE}\[${USER_COLOR}\]\u\[${COLOR_GRAY}\]@\[${HOST_COLOR}\]\h\[${COLOR_GRAY}\]:\[${COLOR_NONE}\]\w"
 	PS1_AFTER="\[${COLOR_GRAY}\]\$\[${COLOR_NONE}\] "
 
@@ -71,11 +59,6 @@ function set_prompt()
 			# add host and cwd to window title
 			PS1_AFTER="${PS1_AFTER}\[\033]0;\u@\h: \w\007\]"
 		fi
-	fi
-
-	if [ "$is_iterm2" = "yes" ] ; then
-		PS1_BEFORE="\[\033]133;A\033\\\\\]${PS1_BEFORE}"
-		PS1_AFTER="${PS1_AFTER}\[\033]133;B\033\\\\\]"
 	fi
 
 	# gitify the prompt
@@ -97,9 +80,6 @@ function set_title()
 {
 	if [ "$use_set_title" != "yes" ] || [ "$in_set_prompt" == "yes" ] || [ "$@" == "set_prompt" ] || [ "$@" == "set_title" ] ; then
 		return
-	fi
-	if [ "$is_iterm2" = "yes" ] ; then
-		echo -ne "\033]133;C\033\\"
 	fi
 	PREV_COMMAND=${PREV_COMMAND}${@}
 	if [ "$TERM_PROGRAM" = "Apple_Terminal" ] ; then

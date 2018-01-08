@@ -1,36 +1,31 @@
 #!bash
 # build PATH
-PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+PATH=""
 
-pre_path=(
-	"/usr/local/opt/coreutils/libexec/gnubin"
-	"/opt/X11/bin"
-	"/var/lib/gems/1.8/bin"
-	"/data/github/current/bin"
-	"/data/github/shell/bin"
-	"/data/ccql/current/bin"
-	"/data/orchestrator/current/bin"
-	"$HOME/Library/Python/2.7/bin"
-	"$HOME/Library/Python/3.5/bin"
+maybe_path=(
+	"$HOME/bin"
 	"$HOME/.local/bin"
 	"$HOME/.homesick/repos/dotfiles/bin"
-	"$HOME/bin"
-)
-
-post_path=(
+	"/data/orchestrator/current/bin"
+	"/data/ccql/current/bin"
+	"/data/github/shell/bin"
+	"/data/github/current/bin"
+	"/var/lib/gems/1.8/bin"
+	"/opt/X11/bin"
+	"/usr/local/opt/coreutils/libexec/gnubin"
+	"/usr/local/sbin"
+	"/usr/local/bin"
+	"/usr/sbin"
+	"/usr/bin"
+	"/sbin"
+	"/bin"
 	"/usr/local/games"
 	"/usr/games"
 	"/opt/puppetlabs/bin"
 	"/opt/dell/srvadmin/bin"
 )
 
-for p in "${pre_path[@]}" ; do
-	if [ -d "$p" ] ; then
-		PATH="$p:$PATH"
-	fi
-done
-
-for p in "${post_path[@]}" ; do
+for p in "${maybe_path[@]}" ; do
 	if [ -d "$p" ] ; then
 		PATH="$PATH:$p"
 	fi
