@@ -5,13 +5,13 @@ EDITOR="nano"
 atom=$(type -P atom)
 
 if [ -x "$atom" ] ; then
-	export EDITOR="rmate -w"
+	EDITOR="rmate -w"
 	alias nano="atom"
 	alias subl="atom"
+else
+	alias atom=$EDITOR
+	alias subl=$EDITOR
 fi
-
-alias atom=$EDITOR
-alias subl=$EDITOR
 
 VISUAL=$EDITOR
 
