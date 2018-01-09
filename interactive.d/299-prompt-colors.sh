@@ -4,7 +4,7 @@ COLORS_256=(3 4 5 6 10 12 13 14 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 
 
 # generate unique colors for user and host
 user_hash=$(echo $USER | cksum | cut -c2-5)
-host_hash=$(hostname -f | cksum | cut -c2-5)
+host_hash=$(hostname -s | cksum | cut -c2-5)
 
 if [[ $TERM =~ "256color" ]]; then
 	user_index=$(($user_hash % ${#COLORS_256[@]}))
