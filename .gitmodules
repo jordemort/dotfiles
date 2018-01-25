@@ -1,31 +1,22 @@
-[submodule "diff-so-fancy"]
-	path = diff-so-fancy
-	url = https://github.com/stevemao/diff-so-fancy.git
-[submodule "git-open"]
-	path = git-open
-	url = https://github.com/paulirish/git-open.git
-[submodule "lesspipe"]
-	path = lesspipe
-	url = https://github.com/wofr06/lesspipe.git
-[submodule "vboxmanage-bash-completion"]
-	path = vboxmanage-bash-completion
-	url = https://github.com/gryf/vboxmanage-bash-completion.git
-[submodule "vagrant-bash-completion"]
-	path = vagrant-bash-completion
+[submodule "submodules/diff-so-fancy"]
+	path = submodules/diff-so-fancy
+	url = https://github.com/so-fancy/diff-so-fancy
+[submodule "submodules/lesspipe"]
+	path = submodules/lesspipe
+	url = https://github.com/wofr06/lesspipe
+[submodule "submodules/git-open"]
+	path = submodules/git-open
+	url = https://github.com/paulirish/git-open
+[submodule "submodules/vboxmanage-bash-completion"]
+	path = submodules/vboxmanage-bash-completion
+	url = https://github.com/gryf/vboxmanage-bash-completion
+[submodule "submodules/vagrant-bash-completion"]
+	path = submodules/vagrant-bash-completion
 	url = https://github.com/brbsix/vagrant-bash-completion
-[submodule "pip-bash-completion"]
-	path = pip-bash-completion
-	url = https://github.com/ekalinin/pip-bash-completion
-[submodule "open-bash-completion"]
-	path = open-bash-completion
+[submodule "submodules/open-bash-completion"]
+	path = submodules/open-bash-completion
 	url = https://github.com/moshen/open-bash-completion
-[submodule "rmate"]
-	path = rmate
-	url = https://github.com/jordemort/rmate.git
+[submodule "submodules/rmate"]
+	path = submodules/rmate
+	url = http://github.com/aurora/rmate
 	branch = unix-socket
-[submodule "sempl"]
-	path = sempl
-	url = https://github.com/nextrevision/sempl
-[submodule "base64-in-bash"]
-	path = base64-in-bash
-	url = https://gist.github.com/7826322.git

@@ -7,7 +7,7 @@ shopt -s checkwinsize
 export LESS=-XMR
 
 # use lessopen
-export LESSOPEN="|lesspipe.sh %s"
+export LESSOPEN="|$DOTFILES/submodules/lesspipe/lesspipe.sh %s"
 
 if [ -n "$(type -P pygmentize)" ] ; then
 	export LESSCOLORIZER=pygmentize

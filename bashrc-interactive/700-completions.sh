@@ -16,14 +16,12 @@ fi
 source "$HOME/.homesick/repos/dotfiles/stolen-from-git/git-completion.bash"
 # shellcheck source=../../homeshick/completions/homeshick-completion.bash
 source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
-# shellcheck source=../pip-bash-completion/pip
-source "$HOME/.homesick/repos/dotfiles/pip-bash-completion/pip"
 
 # load these as appropriate
 [ "$(type -P aws_completer)" ] && complete -C "$(which aws_completer)" aws
-# shellcheck source=../open-bash-completion/open
-[ "$UNAME" = "Darwin" ] && source "$HOME/.homesick/repos/dotfiles/open-bash-completion/open"
-# shellcheck source=../vagrant-bash-completion/vagrant-bash-completion/etc/bash_completion.d/vagrant
-[ "$(type -P vagrant)" ] && source "$HOME/.homesick/repos/dotfiles/vagrant-bash-completion/vagrant-bash-completion/etc/bash_completion.d/vagrant"
-# shellcheck source=../vboxmanage-bash-completion/VBoxManage
-[ "$(type -P vboxmanage)" ] && source "$HOME/.homesick/repos/dotfiles/vboxmanage-bash-completion/VBoxManage"
+# shellcheck source=../submodules/open-bash-completion/open
+[ "$UNAME" = "Darwin" ] && source "$HOME/.homesick/repos/dotfiles/submodules/open-bash-completion/open"
+# shellcheck source=../submodules/vagrant-bash-completion/vagrant-bash-completion/etc/bash_completion.d/vagrant
+[ "$(type -P vagrant)" ] && source "$HOME/.homesick/repos/dotfiles/submodules/vagrant-bash-completion/vagrant-bash-completion/etc/bash_completion.d/vagrant"
+# shellcheck source=../submodules/vboxmanage-bash-completion/VBoxManage
+[ "$(type -P vboxmanage)" ] && source "$HOME/.homesick/repos/dotfiles/submodules/vboxmanage-bash-completion/VBoxManage"
