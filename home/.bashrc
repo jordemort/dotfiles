@@ -1,25 +1,24 @@
 #!bash
-# get homeshick set up
-source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 
-# break the rest of bashrc out so any changes picked up
-# by homeshick refresh above are effective immediately
+# for local config, secrets, etc
+if [ -e "$HOME/.bashrc.local" ] ; then
+	# shellcheck disable=SC1090
+	. $HOME/.bashrc.local
+fi
+
 DOTFILES="$HOME/.homesick/repos/dotfiles"
-for rc in "$DOTFILES/universal.d/"*.sh ; do
+for rc in "$DOTFILES/bashrc-all/"*.sh ; do
 	if [ -x $rc ] ; then
+		# shellcheck disable=SC1090
 		source $rc
 	fi
 done
 
 if [ -n "$PS1" ] ; then
-	homeshick -q -b refresh || homeshick -b refresh
-	for rc in "$DOTFILES/interactive.d/"*.sh ; do
+	for rc in "$DOTFILES/bashrc-interactive/"*.sh ; do
 		if [ -x $rc ] ; then
+			# shellcheck disable=SC1090
 			source $rc
 		fi
 	done
-fi
-
-if [ -e "$HOME/.bashrc.local" ] ; then
-	. $HOME/.bashrc.local
 fi
