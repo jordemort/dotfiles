@@ -1,14 +1,17 @@
 #!bash
 # load git stuff
+# shellcheck disable=SC2034
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWUNTRACKEDFILES=1
 GIT_PS1_SHOWUPSTREAM=verbose
 GIT_PS1_SHOWCOLORHINTS=1
 
+# shellcheck source=../bin/git-prompt.sh
 source "$HOME/.homesick/repos/dotfiles/bin/git-prompt.sh"
 
 if [[ $TERM =~ "256color" ]]; then
 	# hand picked list of "readable" colors
+	# shellcheck disable=SC2207
 	dynamic_colors=($(seq 3 6) 10 $(seq 12 14) $(seq 22 45) $(seq 58 81) $(seq 99 112) $(seq 124 153) $(seq 160 187) $(seq 196 219))
 	pre_dyanmic_color='38;5;'
 else
@@ -95,9 +98,11 @@ PROMPT_COMMAND="set_prompt"
 # set window title to currently running command
 function set_title()
 {
+	# shellcheck disable=SC2198
 	if [ "$use_set_title" != "yes" ] || [ "$in_set_prompt" == "yes" ] || [ "$@" == "set_prompt" ] || [ "$@" == "set_title" ] ; then
 		return
 	fi
+	# shellcheck disable=SC2124
 	PREV_COMMAND=${PREV_COMMAND}${@}
 	if [ "$TERM_PROGRAM" = "Apple_Terminal" ] ; then
 		echo -ne "\033]0;${PREV_COMMAND}\007"
