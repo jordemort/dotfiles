@@ -6,8 +6,8 @@ GIT_PS1_SHOWUNTRACKEDFILES=1
 GIT_PS1_SHOWUPSTREAM=verbose
 GIT_PS1_SHOWCOLORHINTS=1
 
-# shellcheck source=../bin/git-prompt.sh
-source "$HOME/.homesick/repos/dotfiles/bin/git-prompt.sh"
+# shellcheck source=../stolen-from-git/git-prompt.sh
+source "$HOME/.homesick/repos/dotfiles/stolen-from-git/git-prompt.sh"
 
 if [[ $TERM =~ "256color" ]]; then
 	# hand picked list of "readable" colors
