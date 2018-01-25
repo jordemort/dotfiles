@@ -7,6 +7,23 @@ GIT_PS1_SHOWCOLORHINTS=1
 
 source "$HOME/.homesick/repos/dotfiles/bin/git-prompt.sh"
 
+if [[ $TERM =~ "256color" ]]; then
+	# hand picked list of "readable" colors
+	dynamic_colors=($(seq 3 6) 10 $(seq 12 14) $(seq 22 45) $(seq 58 81) $(seq 99 112) $(seq 124 153) $(seq 160 187) $(seq 196 219))
+	pre_dyanmic_color='38;5;'
+else
+	dynamic_colors=("0;33" "0;34" "0;35" "0;36" "1;32" "1;34" "1;35" "1;36")
+	pre_dyanmic_color=''
+fi
+
+# generate unique colors for user and host
+user_hash=$(echo $USER | cksum | cut -c2-5)
+host_hash=$(hostname -s | cksum | cut -c2-5)
+user_index=$(($user_hash % ${#dynamic_colors[@]}))
+host_index=$(($host_hash % ${#dynamic_colors[@]}))
+user_color='\033['${pre_dyanmic_color}${dynamic_colors[${user_index}]}'m'
+host_color='\033['${pre_dyanmic_color}${dynamic_colors[${host_index}]}'m'
+
 # figure out if we're setting window titles
 use_set_title=no
 case $TERM in
@@ -48,7 +65,7 @@ function set_prompt()
 		PS1_BEFORE=""
 	fi
 
-	PS1_BEFORE="${PS1_BEFORE}\[${USER_COLOR}\]\u\[${COLOR_GRAY}\]@\[${HOST_COLOR}\]\h\[${COLOR_GRAY}\]:\[${COLOR_NONE}\]\w"
+	PS1_BEFORE="${PS1_BEFORE}\[${user_color}\]\u\[${COLOR_GRAY}\]@\[${host_color}\]\h\[${COLOR_GRAY}\]:\[${COLOR_NONE}\]\w"
 	PS1_AFTER="\[${COLOR_GRAY}\]\$\[${COLOR_NONE}\] "
 
 	if [ "$use_set_title" == "yes" ] ; then
