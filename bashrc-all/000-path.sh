@@ -1,11 +1,11 @@
 #!bash
 # build PATH
-PATH=""
-
+new_path="$HOME/.homesick/repos/dotfiles/bin"
 maybe_path=(
 	"$HOME/bin"
 	"$HOME/.local/bin"
-	"$HOME/.homesick/repos/dotfiles/bin"
+	"PYTHON"
+	"/usr/local/MacGPG2/bin"
 	"/data/orchestrator/current/bin"
 	"/data/ccql/current/bin"
 	"/data/github/shell/bin"
@@ -23,12 +23,21 @@ maybe_path=(
 	"/usr/games"
 	"/opt/puppetlabs/bin"
 	"/opt/dell/srvadmin/bin"
+	"/Applications/VMware Fusion.app/Contents/Public"
+	"/usr/local/munki"
 )
 
 for p in "${maybe_path[@]}" ; do
-	if [ -d "$p" ] ; then
-		PATH="$PATH:$p"
+	if [ "$p" = "PYTHON" ] && [ -d "$HOME/Library/Python" ] ; then
+		# shellcheck disable=SC2045
+		for python in $(ls -r "$HOME/Library/Python") ; do
+			if [ -d "$HOME/Library/Python/$python/bin" ] && [ -x "$HOME/Library/Python/$python/bin" ] ; then
+				new_path="$new_path:$HOME/Library/Python/$python/bin"
+			fi
+		done
+	elif [ -d "$p" ] ; then
+		new_path="$new_path:$p"
 	fi
 done
 
-export PATH
+export PATH="$new_path"
