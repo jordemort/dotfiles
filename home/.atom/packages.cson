@@ -1,0 +1,12 @@
+packages: [
+  "busy-signal"
+  "chmod"
+  "file-icons"
+  "git-plus"
+  "intentions"
+  "linter"
+  "linter-shellcheck"
+  "linter-ui-default"
+  "package-sync"
+  "remote-atom"
+]

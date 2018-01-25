@@ -1,0 +1,23 @@
+"*":
+  core:
+    telemetryConsent: "no"
+    themes: [
+      "one-dark-ui"
+      "solarized-dark-syntax"
+    ]
+    titleBar: "custom"
+  editor:
+    fontFamily: "FuraCode Nerd Font"
+    showIndentGuide: true
+    showInvisibles: true
+  "exception-reporting":
+    userId: "172dcfa8-26d1-4f23-9a48-129ef755a620"
+  "linter-ui-default":
+    showPanel: true
+  "package-sync":
+    createOnChange: true
+  "remote-atom":
+    keep_alive: true
+    launch_at_startup: true
+  welcome:
+    showOnStartup: false
