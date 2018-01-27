@@ -5,6 +5,7 @@ maybe_path=(
 	"$HOME/bin"
 	"$HOME/.local/bin"
 	"PYTHON"
+	"$HOME/.homesick/repos/node-stuff/node_modules/.bin"
 	"/usr/local/MacGPG2/bin"
 	"/data/orchestrator/current/bin"
 	"/data/ccql/current/bin"
