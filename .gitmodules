@@ -20,3 +20,6 @@
 	path = submodules/rmate
 	url = http://github.com/aurora/rmate
 	branch = unix-socket
+[submodule "submodules/secrets.sh"]
+	path = submodules/secrets.sh
+	url = https://github.com/jordemort/secrets.sh
