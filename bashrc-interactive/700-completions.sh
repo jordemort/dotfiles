@@ -12,8 +12,8 @@ if [ -z "$BASH_COMPLETION" ] ; then
 fi
 
 # always load these
-# shellcheck source=../stolen-from-git/git-completion.bash
-source "$HOME/.homesick/repos/dotfiles/stolen-from-git/git-completion.bash"
+# shellcheck source=../generated/git-completion.bash
+source "$HOME/.homesick/repos/dotfiles/generated/git-completion.bash"
 # shellcheck source=../../homeshick/completions/homeshick-completion.bash
 source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
 
