@@ -1,12 +1,16 @@
 packages: [
   "busy-signal"
   "chmod"
+  "editorconfig"
   "file-icons"
   "git-plus"
   "intentions"
   "linter"
+  "linter-csslint"
   "linter-shellcheck"
+  "linter-tidy"
   "linter-ui-default"
   "package-sync"
   "remote-atom"
+  "vim-modeline"
 ]

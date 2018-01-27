@@ -16,6 +16,7 @@
     showPanel: true
   "package-sync":
     createOnChange: true
+    forceOverwrite: true
   "remote-atom":
     keep_alive: true
     launch_at_startup: true
