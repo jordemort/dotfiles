@@ -1,4 +1,6 @@
 "*":
+  "autocomplete-plus":
+    includeCompletionsFromAllBuffers: false
   "autocomplete-python-jedi":
     pythonPaths: "/usr/local/bin/python3;/usr/bin/python"
   "autocomplete-ruby":
