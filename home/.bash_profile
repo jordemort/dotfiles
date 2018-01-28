@@ -1,10 +1,13 @@
+#!bash
+
 if [ -e "$HOME/.bashrc" ] ; then
-	. $HOME/.bashrc
+  # shellcheck source=.bashrc
+  . $HOME/.bashrc
 fi
 
 fortune=$(type -P fortune)
 
 if [ -x "${fortune}" ] ; then
-	fortune -a
-	echo
+  fortune -a
+  echo
 fi
