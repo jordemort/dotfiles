@@ -5,12 +5,12 @@ EDITOR="nano"
 atom=$(type -P atom)
 
 if [ -x "$atom" ] ; then
-	EDITOR="rmate -w"
-	alias nano="atom"
-	alias subl="atom"
+  EDITOR="rmate -w"
+  alias nano="atom"
+  alias subl="atom"
 else
-	alias atom=$EDITOR
-	alias subl=$EDITOR
+  alias atom=$EDITOR
+  alias subl=$EDITOR
 fi
 
 VISUAL=$EDITOR

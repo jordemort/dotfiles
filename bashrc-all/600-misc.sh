@@ -10,7 +10,7 @@ export LESS=-XMR
 export LESSOPEN="|$DOTFILES/submodules/lesspipe/lesspipe.sh %s"
 
 if [ -n "$(type -P pygmentize)" ] ; then
-	export LESSCOLORIZER=pygmentize
+  export LESSCOLORIZER=pygmentize
 fi
 
 # set debian env based on git

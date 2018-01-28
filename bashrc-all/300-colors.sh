@@ -28,5 +28,5 @@ alias colors="set | grep '^COLOR_' | sort"
 # enable color support of ls and also add handy aliases
 dircolors=$(type -P dircolors)
 if [ ! -z "$dircolors" ] ; then
-	eval "$(dircolors -b)"
+  eval "$(dircolors -b)"
 fi
