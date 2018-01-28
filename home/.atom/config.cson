@@ -1,8 +1,12 @@
 "*":
+  "autocomplete-python-jedi":
+    pythonPaths: "/usr/local/bin/python3;/usr/bin/python"
+  "autocomplete-ruby":
+    rsensePath: "/Users/jordan/.gem/ruby/2.3.0/bin/rsense"
   core:
     telemetryConsent: "no"
     themes: [
-      "one-dark-ui"
+      "seti-ui"
       "solarized-dark-syntax"
     ]
     titleBar: "custom"
@@ -12,6 +16,13 @@
     showInvisibles: true
   "exception-reporting":
     userId: "172dcfa8-26d1-4f23-9a48-129ef755a620"
+  "git-wip":
+    notify: false
+    warn: false
+  "goto-definition":
+    performanceMode: true
+  "linter-python":
+    executablePath: "/Users/jordan/Library/Python/3.6/bin/pylama"
   "linter-ui-default":
     showPanel: true
   "package-sync":
@@ -20,5 +31,11 @@
   "remote-atom":
     keep_alive: true
     launch_at_startup: true
+  "seti-ui":
+    compactView: true
+    fileIcons: false
   welcome:
     showOnStartup: false
+  zentabs:
+    maximumOpenedTabs: 7
+    neverCloseUnsaved: true
