@@ -5,6 +5,7 @@ maybe_path=(
 	"$HOME/bin"
 	"$HOME/.local/bin"
 	"PYTHON"
+	"RUBY"
 	"$HOME/.homesick/repos/node-stuff/node_modules/.bin"
 	"/usr/local/MacGPG2/bin"
 	"/data/orchestrator/current/bin"
@@ -34,6 +35,13 @@ for p in "${maybe_path[@]}" ; do
 		for python in $(ls -r "$HOME/Library/Python") ; do
 			if [ -d "$HOME/Library/Python/$python/bin" ] && [ -x "$HOME/Library/Python/$python/bin" ] ; then
 				new_path="$new_path:$HOME/Library/Python/$python/bin"
+			fi
+		done
+	elif [ "$p" = "RUBY" ] && [ -d "$HOME/.gem/ruby" ] ; then
+		# shellcheck disable=SC2045
+		for ruby in $(ls -r "$HOME/.gem/ruby") ; do
+			if [ -d "$HOME/.gem/ruby/$ruby/bin" ] && [ -x "$HOME/.gem/ruby/$ruby/bin" ] ; then
+				new_path="$new_path:$HOME/.gem/ruby/$ruby/bin"
 			fi
 		done
 	elif [ -d "$p" ] ; then
