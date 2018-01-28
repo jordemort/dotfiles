@@ -2,13 +2,13 @@
 
 # load bash_completion if it isn't already loaded for us
 if [ -z "$BASH_COMPLETION" ] ; then
-	if [ -e /usr/local/etc/bash_completion ] ; then
-		# check for one installed by homebrew first
-		source /usr/local/etc/bash_completion
-	elif [ -e /etc/bash_completion ] ; then
-		# otherwise maybe it's here?
-		source /etc/bash_completion
-	fi
+  if [ -e /usr/local/etc/bash_completion ] ; then
+    # check for one installed by homebrew first
+    source /usr/local/etc/bash_completion
+  elif [ -e /etc/bash_completion ] ; then
+    # otherwise maybe it's here?
+    source /etc/bash_completion
+  fi
 fi
 
 # always load these
