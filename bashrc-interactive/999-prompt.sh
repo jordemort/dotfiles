@@ -1,4 +1,4 @@
-#!bash
+#!/usr/bin/env bash
 # load git stuff
 # shellcheck disable=SC2034
 GIT_PS1_SHOWDIRTYSTATE=1

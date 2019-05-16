@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # save some time changing directories
 CDPATH=".:$HOME:$HOME/Source:$HOME/GitHub:$HOME/.homesick/repos"
 

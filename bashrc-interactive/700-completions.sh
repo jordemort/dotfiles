@@ -1,4 +1,4 @@
-#!bash
+#!/usr/bin/env bash
 
 # load bash_completion if it isn't already loaded for us
 if [ -z "$BASH_COMPLETION" ] ; then

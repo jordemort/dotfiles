@@ -1,4 +1,4 @@
-#!bash
+#!/usr/bin/env bash
 # build PATH
 new_path="$HOME/.homesick/repos/dotfiles/bin"
 maybe_path=(

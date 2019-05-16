@@ -1,16 +1,17 @@
-#!bash
+#!/usr/bin/env bash
 # no vi please
 EDITOR="nano"
 
-atom=$(type -P atom)
+code=$(type -P code)
 
-if [ -x "$atom" ] ; then
-  EDITOR="rmate -w"
-  alias nano="atom"
-  alias subl="atom"
+if [ -x "$code" ] ; then
+  EDITOR="code -n -w"
+  alias nano=code
+  alias subl=code
 else
-  alias atom=$EDITOR
-  alias subl=$EDITOR
+  alias atom=nano
+  alias code=nano
+  alias subl=nano
 fi
 
 VISUAL=$EDITOR

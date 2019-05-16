@@ -1,4 +1,4 @@
-#!bash
+#!/usr/bin/env bash
 # pour le Mac
 export CLICOLOR=1
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD

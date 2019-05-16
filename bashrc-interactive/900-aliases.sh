@@ -1,4 +1,4 @@
-#!bash
+#!/usr/bin/env bash
 # make jobs output useful
 alias jobs="jobs -l"
 

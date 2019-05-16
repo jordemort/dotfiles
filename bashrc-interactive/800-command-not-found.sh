@@ -1,4 +1,4 @@
-#!bash
+#!/usr/bin/env bash
 
 # if the command-not-found package is installed, use it
 function detect_command_not_found {

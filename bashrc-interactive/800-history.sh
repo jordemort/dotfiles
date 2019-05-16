@@ -1,4 +1,4 @@
-#!bash
+#!/usr/bin/env bash
 # load last 1000 lines from history, never truncate, ignore dups
 HISTSIZE=1000
 HISTFILESIZE=

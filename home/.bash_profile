@@ -1,8 +1,8 @@
-#!bash
+#!/usr/bin/env bash
 
 if [ -e "$HOME/.bashrc" ] ; then
   # shellcheck source=.bashrc
-  . $HOME/.bashrc
+  . "$HOME/.bashrc"
 fi
 
 fortune=$(type -P fortune)
