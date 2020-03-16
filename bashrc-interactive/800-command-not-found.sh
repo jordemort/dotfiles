@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
 # if the command-not-found package is installed, use it
-function detect_command_not_found {
+if [ -n "$(type -P brew)" ] && brew command command-not-found-init > /dev/null 2>&1; then
+  eval "$(brew command-not-found-init)"
+else
   if [ -x /usr/lib/command-not-found ] ; then
     command_not_found=/usr/lib/command-not-found
   elif [ -x /usr/share/command-not-found/command-not-found ]; then
@@ -18,6 +20,4 @@ function detect_command_not_found {
     printf "%s: command not found\n" "$1" >&2
     return 127
   }
-}
-
-detect_command_not_found
+fi
