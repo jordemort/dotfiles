@@ -13,7 +13,7 @@ preferred_dir="$(dirname "$preferred_path")"
 
 if [ "$(readlink -f "$0")" != "$preferred_path" ] ; then
   if [ ! -e "$preferred_path" ] ; then
-    mkdir -p "$preferred_dir"
+    mkdir -p "$(dirname "$preferred_dir")"
     cp -a "$(dirname "$0")" "$preferred_dir"
   fi
   exec "$preferred_path"
