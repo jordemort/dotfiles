@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+if [ -z "${LOGGING_DOTFILES_SETUP:-}" ] ; then
+  echo "# $(date)" > "$HOME/.dotfiles-setup.log"
+  LOGGING_DOTFILES_SETUP=1 exec "$0" >> "$HOME/.dotfiles-setup.log" 2>&1
+fi
+
+set -x
+
 preferred_path="$HOME/.homesick/repos/dotfiles/setup.sh"
 preferred_dir="$(dirname "$preferred_path")"
 
