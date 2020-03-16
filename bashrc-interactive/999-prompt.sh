@@ -20,8 +20,8 @@ else
 fi
 
 # generate unique colors for user and host
-user_hash=$(echo $USER | cksum | cut -c2-5)
-host_hash=$(hostname -s | cksum | cut -c2-5)
+user_hash=$(echo $USER | cksum | cut -c2-5 | sed s/^0//)
+host_hash=$(hostname -s | cksum | cut -c2-5 | sed s/^0//)
 user_index=$(($user_hash % ${#dynamic_colors[@]}))
 host_index=$(($host_hash % ${#dynamic_colors[@]}))
 user_color='\033['${pre_dyanmic_color}${dynamic_colors[${user_index}]}'m'
