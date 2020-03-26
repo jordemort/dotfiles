@@ -3,7 +3,6 @@
 EDITOR="nano"
 
 # Detect VS Code remote and inject it into path
-set -x
 if [ "$(uname -s)" = "Linux" ] ; then
   ppid=$(ps -ho ppid "$$")
   parent_exe=$(readlink -f "/proc/$ppid/exe")
@@ -15,7 +14,6 @@ if [ "$(uname -s)" = "Linux" ] ; then
     fi
   fi
 fi
-set +x
 
 # Look for VS Code
 code=$(type -P code)
