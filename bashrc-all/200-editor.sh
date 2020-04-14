@@ -5,7 +5,7 @@ EDITOR="nano"
 # Detect VS Code remote and inject it into path
 if [ "$(uname -s)" = "Linux" ] ; then
   ppid=$(ps -ho ppid "$$")
-  parent_exe=$(readlink -f "/proc/$ppid/exe")
+  parent_exe=$(readlink -f "/proc/${ppid//[[:space:]]/}/exe")
 
   if [[ $parent_exe = $HOME/.vscode-server/bin/* ]] ; then
     vscode_bin="$(dirname "$parent_exe")/bin"
