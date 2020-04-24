@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
 # if the command-not-found package is installed, use it
-if [ -n "$(type -P brew)" ] && brew command command-not-found-init > /dev/null 2>&1; then
-  eval "$(brew command-not-found-init)"
+if [ -n "$(type -P brew)" ] ; then
+  # shellcheck source=generated/brew-command-not-found.sh
+  source "$HOME/.homesick/repos/dotfiles/generated/brew-command-not-found.sh"
 else
   if [ -x /usr/lib/command-not-found ] ; then
     command_not_found=/usr/lib/command-not-found
