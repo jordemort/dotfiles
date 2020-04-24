@@ -10,16 +10,9 @@
 [submodule "submodules/vboxmanage-bash-completion"]
 	path = submodules/vboxmanage-bash-completion
 	url = https://github.com/gryf/vboxmanage-bash-completion
-[submodule "submodules/vagrant-bash-completion"]
-	path = submodules/vagrant-bash-completion
-	url = https://github.com/brbsix/vagrant-bash-completion
 [submodule "submodules/open-bash-completion"]
 	path = submodules/open-bash-completion
 	url = https://github.com/moshen/open-bash-completion
-[submodule "submodules/rmate"]
-	path = submodules/rmate
-	url = http://github.com/aurora/rmate
-	branch = unix-socket
 [submodule "submodules/secrets.sh"]
 	path = submodules/secrets.sh
 	url = https://github.com/jordemort/secrets.sh
