@@ -16,3 +16,6 @@
 [submodule "submodules/secrets.sh"]
 	path = submodules/secrets.sh
 	url = https://github.com/jordemort/secrets.sh
+[submodule "submodules/path"]
+	path = submodules/path
+	url = git@github.com:jordemort/path.git

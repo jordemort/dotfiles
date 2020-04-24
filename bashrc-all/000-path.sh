@@ -1,35 +1,28 @@
 #!/usr/bin/env bash
-# build PATH
-new_path="$HOME/.homesick/repos/dotfiles/bin"
+
+if (( BASH_VERSINFO[0] > 3 )) ; then
+  # shellcheck source=submodules/path/path.sh
+  source "$HOME/.homesick/repos/dotfiles/submodules/path/path.sh"
+else
+  # shellcheck source=submodules/path/path-v3.sh
+  source "$HOME/.homesick/repos/dotfiles/submodules/path/path-v3.sh"
+fi
+
+# add these to PATH if they exist
 maybe_path=(
-  "$HOME/bin"
-  "$HOME/.local/bin"
-  "/data/orchestrator/current/bin"
-  "/data/ccql/current/bin"
-  "/data/github/shell/bin"
-  "/data/github/current/bin"
-  "/var/lib/gems/1.8/bin"
-  "/opt/X11/bin"
   "/usr/local/opt/coreutils/libexec/gnubin"
+  "/opt/X11/bin"
   "/usr/local/MacGPG2/bin"
-  "/usr/local/sbin"
-  "/usr/local/bin"
-  "/usr/sbin"
-  "/usr/bin"
-  "/sbin"
-  "/bin"
-  "/usr/local/games"
-  "/usr/games"
-  "/opt/puppetlabs/bin"
-  "/opt/dell/srvadmin/bin"
-  "/Applications/VMware Fusion.app/Contents/Public"
-  "/usr/local/munki"
 )
 
 for p in "${maybe_path[@]}" ; do
-  if [ -x "$p" ] && [ -x "$p" ] ; then
-    new_path="$new_path:$p"
+  if [ -d "$p" ] && [ -x "$p" ] ; then
+    path PATH prepend "$p"
   fi
 done
 
-export PATH="$new_path"
+# always add dotfiles/bin
+path PATH prepend "$HOME/.homesick/repos/dotfiles/bin"
+
+# always add $HOME/bin, even if it doesn't exist yet
+path PATH prepend "$HOME/bin"
