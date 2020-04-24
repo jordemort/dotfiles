@@ -46,25 +46,28 @@ function jordemort_prompt()
 {
   local last_rc=$? last_status="" window_title=""
 
+  # append to history file so we never lose anything
+  history -a
+
   # add a red ! to the beginning if the last command failed
   if [ "$last_rc" != "0" ] ; then
     last_status="\[${COLOR_LIGHT_RED}\]${last_rc}! "
   fi
 
-  if [ "$WINDOW_TITLE_MODE" = "file" ] ; then
-    # add proxy icon to title bar (for Terminal.app)
-    window_title="\[\033]7;file://${HOSTNAME}/$(urlencode "$(pwd)")/\007\]\[\033]0;\007\]"
-  elif [ "$WINDOW_TITLE_MODE" = "host" ] ; then
-    # add host and cwd to window title
-    window_title="${PS1_AFTER}\[\033]0;\u@\h: \w\007\]"
-  fi
+  case $WINDOW_TITLE_MODE in
+    file)
+      window_title="\[\033]7;file://${HOSTNAME}/$(urlencode "$(pwd)")/\007\]\[\033]0;\007\]"
+      ;;
+    host)
+      window_title="${PS1_AFTER}\[\033]0;\u@\h: \w\007\]"
+      ;;
+  esac
 
   # gitify the prompt
   __git_ps1 "${last_status}${PS1_BEFORE}" "${PS1_AFTER}${window_title}"
 
-  # append to history file so we never lose anything, and then we're done
-  history -a
+  return $last_rc
 }
 
 # update fancy prompt and append to history every command
-PROMPT_COMMAND="jordemort_prompt"
+PROMPT_COMMAND="jordemort_prompt${PROMPT_COMMAND:+;$PROMPT_COMMAND}"

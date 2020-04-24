@@ -12,10 +12,12 @@ if [ -z "$BASH_COMPLETION" ] ; then
 fi
 
 # always load these
-# shellcheck source=../generated/git-completion.bash
-source "$HOME/.homesick/repos/dotfiles/generated/git-completion.bash"
-# shellcheck source=../../homeshick/completions/homeshick-completion.bash
+# shellcheck disable=SC1090
 source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
+# shellcheck source=submodules/asdf/completions/asdf.bash
+source "$HOME/.homesick/repos/dotfiles/submodules/asdf/completions/asdf.bash"
+# shellcheck source=generated/git-completion.bash
+source "$HOME/.homesick/repos/dotfiles/generated/git-completion.bash"
 
 # load these as appropriate
 [ "$(type -P aws_completer)" ] && complete -C "$(which aws_completer)" aws
