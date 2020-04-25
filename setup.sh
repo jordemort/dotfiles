@@ -8,28 +8,29 @@ fi
 
 set -x
 
-preferred_path="$HOME/.homesick/repos/dotfiles/setup.sh"
-preferred_dir="$(dirname "$preferred_path")"
+homesick_repos="$HOME/.homesick/repos"
+preferred_dir="$homesick_repos/dotfiles"
+homeshick_dir="$homesick_repos/homeshick"
+current_dir=$(dirname "$(readlink -f "$0")")
 
-if [ "$(readlink -f "$0")" != "$preferred_path" ] ; then
-  current_dir=$(dirname "$(readlink -f "$0")")
+if [ "$current_dir" != "$preferred_dir" ] ; then
   mkdir -p "$(dirname "$preferred_dir")"
   mv "$current_dir" "$preferred_dir"
 fi
 
-cd "$(dirname "$preferred_path")"
+cd "$preferred_dir"
 git submodule init
 git submodule update
 
-if [ ! -d "$HOME/.homesick/repos/homeshick" ] ; then
-  git clone git://github.com/andsens/homeshick.git "$HOME/.homesick/repos/homeshick"
+if [ ! -d "$homeshick_dir" ] ; then
+  git clone git://github.com/andsens/homeshick.git "$homeshick_dir"
 fi
 
-$HOME/.homesick/repos/homeshick/bin/homeshick link -f dotfiles
+"$homeshick_dir/bin/homeshick" link -f dotfiles
 
 if [ ! -e "$HOME/.gnupg/pubring.kbx" ] ; then
   mkdir -p "$HOME/.gnupg"
   chmod 700 "$HOME/.gnupg"
-  gpg --import < "$HOME/.homesick/repos/dotfiles/misc/key.pub"
+  gpg --import < "$preferred_dir/misc/key.pub"
   echo "304E3D8D4A14C451DBA5582AC341950C47B6CE14:6:" | gpg --import-ownertrust
 fi
