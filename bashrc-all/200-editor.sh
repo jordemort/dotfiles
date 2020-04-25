@@ -10,7 +10,7 @@ if [ "$(uname -s)" = "Linux" ] ; then
   if [[ $parent_exe = $HOME/.vscode-server/bin/* ]] ; then
     vscode_bin="$(dirname "$parent_exe")/bin"
     if [ -x "$vscode_bin/code" ] ; then
-      path PATH "$vscode_bin"
+      path PATH prepend "$vscode_bin"
     fi
   fi
 fi
