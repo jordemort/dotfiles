@@ -12,12 +12,13 @@ preferred_path="$HOME/.homesick/repos/dotfiles/setup.sh"
 preferred_dir="$(dirname "$preferred_path")"
 
 if [ "$(readlink -f "$0")" != "$preferred_path" ] ; then
-  if [ ! -e "$preferred_path" ] ; then
-    mkdir -p "$(dirname "$preferred_dir")"
-    cp -a "$(dirname "$0")" "$preferred_dir"
-  fi
-  exec "$preferred_path"
+  current_dir=$(dirname "$(readlink -f "$0")")
+  mv "$current_dir" "$preferred_dir"
 fi
+
+cd "$(dirname "$preferred_path")"
+git submodule init
+git submodule update
 
 if [ ! -d "$HOME/.homesick/repos/homeshick" ] ; then
   git clone git://github.com/andsens/homeshick.git "$HOME/.homesick/repos/homeshick"

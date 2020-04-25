@@ -1,24 +1,24 @@
 [submodule "submodules/diff-so-fancy"]
 	path = submodules/diff-so-fancy
-	url = https://github.com/so-fancy/diff-so-fancy
+	url = git://github.com/so-fancy/diff-so-fancy
 [submodule "submodules/lesspipe"]
 	path = submodules/lesspipe
-	url = https://github.com/wofr06/lesspipe
+	url = git://github.com/wofr06/lesspipe
 [submodule "submodules/git-open"]
 	path = submodules/git-open
-	url = https://github.com/paulirish/git-open
+	url = git://github.com/paulirish/git-open
 [submodule "submodules/vboxmanage-bash-completion"]
 	path = submodules/vboxmanage-bash-completion
-	url = https://github.com/gryf/vboxmanage-bash-completion
+	url = git://github.com/gryf/vboxmanage-bash-completion
 [submodule "submodules/open-bash-completion"]
 	path = submodules/open-bash-completion
-	url = https://github.com/moshen/open-bash-completion
+	url = git://github.com/moshen/open-bash-completion
 [submodule "submodules/secrets.sh"]
 	path = submodules/secrets.sh
-	url = https://github.com/jordemort/secrets.sh
+	url = git://github.com/jordemort/secrets.sh
 [submodule "submodules/path"]
 	path = submodules/path
-	url = git@github.com:jordemort/path.git
+	url = git://github.com/jordemort/path
 [submodule "submodules/asdf"]
 	path = submodules/asdf
-	url = https://github.com/asdf-vm/asdf
+	url = git://github.com/asdf-vm/asdf
