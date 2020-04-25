@@ -13,6 +13,7 @@ preferred_dir="$(dirname "$preferred_path")"
 
 if [ "$(readlink -f "$0")" != "$preferred_path" ] ; then
   current_dir=$(dirname "$(readlink -f "$0")")
+  mkdir -p "$(dirname "$preferred_dir")"
   mv "$current_dir" "$preferred_dir"
 fi
 
