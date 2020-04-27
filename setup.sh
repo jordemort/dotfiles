@@ -23,7 +23,7 @@ git submodule init
 git submodule update
 
 if [ ! -d "$homeshick_dir" ] ; then
-  git clone git://github.com/andsens/homeshick.git "$homeshick_dir"
+  git clone https://github.com/andsens/homeshick.git "$homeshick_dir"
 fi
 
 "$homeshick_dir/bin/homeshick" link -f dotfiles
