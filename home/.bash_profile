@@ -8,6 +8,6 @@ fi
 fortune=$(type -P fortune)
 
 if [ -x "${fortune}" ] ; then
-  fortune -a
+  fortune
   echo
 fi
