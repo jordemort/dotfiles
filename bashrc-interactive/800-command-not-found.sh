@@ -17,8 +17,9 @@ else
     # check because c-n-f could've been removed in the meantime
     if [ -x "$command_not_found" ]; then
       "$command_not_found" -- "$1"
+    else
+      printf "%s: command not found\n" "$1" >&2
     fi
-    printf "%s: command not found\n" "$1" >&2
     return 127
   }
 fi
