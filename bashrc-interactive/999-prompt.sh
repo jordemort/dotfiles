@@ -25,7 +25,9 @@ function jordemort_prompt()
   local last_rc=$? last_status="" window_title=""
 
   # append to history file so we never lose anything
-  history -a
+  if [ -z "${mcfly:-}" ] ; then
+    history -a
+  fi
 
   # add a red ! to the beginning if the last command failed
   if [ "$last_rc" != "0" ] ; then

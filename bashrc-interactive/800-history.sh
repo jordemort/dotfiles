@@ -1,14 +1,17 @@
 #!/usr/bin/env bash
-# load last 1000 lines from history, never truncate, ignore dups
-HISTSIZE=1000
-HISTFILESIZE=
-HISTCONTROL=ignoredups
 
-# timestamp history
-HISTTIMEFORMAT="%Y-%m-%d %T "
+if [ -z "${mcfly:-}" ]; then
+  # load last 1000 lines from history, never truncate, ignore dups
+  HISTSIZE=1000
+  HISTFILESIZE=
+  HISTCONTROL=ignoredups
 
-# append to history file, don't overwrite
-shopt -s histappend
+  # timestamp history
+  HISTTIMEFORMAT="%Y-%m-%d %T "
 
-# save multi-line commands as one command
-shopt -s cmdhist
+  # append to history file, don't overwrite
+  shopt -s histappend
+
+  # save multi-line commands as one command
+  shopt -s cmdhist
+fi
