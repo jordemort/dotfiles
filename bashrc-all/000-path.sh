@@ -35,6 +35,7 @@ path PATH prepend "$HOME/.homesick/repos/dotfiles/bin"
 
 # always add $HOME/bin, even if it doesn't exist yet
 path PATH prepend "$HOME/bin"
+path PATH prepend "$HOME/.local/bin"
 
 # make sure things are tidy
 path PATH clean --real
