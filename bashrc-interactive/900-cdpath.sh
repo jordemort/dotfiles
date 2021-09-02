@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # save some time changing directories
-CDPATH=".:$HOME:$HOME/Source:$HOME/GitHub:$HOME/.homesick/repos"
+CDPATH=".:$HOME:$HOME/Source:$HOME/Work:$HOME/.homesick/repos"
 
 # correct spelling on directory names
 if (( BASH_VERSINFO[0] > 3 )) ; then
