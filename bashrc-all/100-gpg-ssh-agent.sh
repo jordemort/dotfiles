@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [ "$(uname -s)" = "Darwin" ] ; then
+if [ "$HOSTNAME" = "betsy.webb.haus" ]; then
   gpg-connect-agent /bye || gpgconf --launch gpg-agent
-  export SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
+  export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 fi
