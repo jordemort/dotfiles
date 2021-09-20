@@ -12,11 +12,17 @@ if [ -n "$(type -P rlwrap)" ] ; then
   alias nslookup='rlwrap nslookup'
 fi
 
-# colorize GNU ls
-# shellcheck disable=SC2010
-if ls --version 2>/dev/null | grep -q GNU ; then
-  alias ls='ls --color=auto'
+if [ -n "$(type -P lsd)" ] ; then
+  # shellcheck disable=SC2262
+  alias ls=lsd
+else
+  # shellcheck disable=SC2010,SC2263
+  if ls --version 2>/dev/null | grep -q GNU ; then
+    # colorize GNU ls
+    alias ls='ls --color=auto'
+  fi
 fi
+
 
 # colorize GNU grep
 if grep --version 2>/dev/null | grep -q GNU ; then
