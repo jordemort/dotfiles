@@ -11,7 +11,7 @@ set -x
 homesick_repos="$HOME/.homesick/repos"
 preferred_dir="$homesick_repos/dotfiles"
 homeshick_dir="$homesick_repos/homeshick"
-current_dir=$(dirname "$(readlink -f "$0")")
+current_dir=$(cd "$(dirname "$0")" && pwd)
 
 if [ "$current_dir" != "$preferred_dir" ] ; then
   mkdir -p "$(dirname "$preferred_dir")"
