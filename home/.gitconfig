@@ -1,33 +1,33 @@
 [user]
-	email = jordan@getseam.com
-	name = Jordan Webb
-	signingkey = 47B6CE14
+email = jordan@caketop.app
+name = Jordan Webb
+signingkey = 47B6CE14
 [commit]
-	gpgsign = true
+gpgsign = true
 [push]
-	default = simple
+default = simple
 [pager]
-	diff = diff-so-fancy | less --tabs=4 -RFX
-	show = diff-so-fancy | less --tabs=4 -RFX
+diff = diff-so-fancy | less --tabs=4 -RFX
+show = diff-so-fancy | less --tabs=4 -RFX
 [github]
-	user = jordemort
-[credential]
-	helper = osxkeychain
+user = jordemort
+# [credential]
+# helper = osxkeychain
 [branch]
-	autosetupmerge = true
+autosetupmerge = true
 [color]
-	ui = true
+ui = true
 [color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
+oldNormal = red bold
+oldHighlight = red bold 52
+newNormal = green bold
+newHighlight = green bold 22
 [color "diff"]
-	meta = yellow
-	frag = magenta bold
-	commit = yellow bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
+meta = yellow
+frag = magenta bold
+commit = yellow bold
+old = red bold
+new = green bold
+whitespace = red reverse
 [init]
-	defaultBranch = main
+defaultBranch = main
