@@ -1,4 +1,4 @@
-format = "$status$battery[](purple)$username$hostname[](purple) $localip$container$directory$git_branch$git_status$git_state$character"
+format = "$status$battery$container$localip[](purple)$username$hostname[](purple) $directory$git_branch$git_status$git_state$character"
 add_newline = false
 
 [status]
@@ -25,6 +25,9 @@ disabled = false
 [localip]
 ssh_only = true
 disabled = false
+#style = "fg:black bg:bright-yellow"
+#format = "[](bright-yellow)[$localipv4]($style)[](bright-yellow) "
+format = "🌐 "
 
 [container]
 symbol = "🎁"
