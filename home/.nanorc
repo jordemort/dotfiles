@@ -1,4 +1,7 @@
 set autoindent
-set const
+set constantshow
 set historylog
-
+set keycolor bold,white,blue
+set linenumbers
+set minibar
+set titlecolor bold,yellow,blue
