@@ -2,6 +2,5 @@ set autoindent
 set constantshow
 set historylog
 set keycolor brightwhite,blue
-set linenumbers
 set statuscolor brightyellow,blue
 set titlecolor brightyellow,blue
