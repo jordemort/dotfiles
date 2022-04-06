@@ -1,0 +1,38 @@
+
+format = "$status$battery$username[@](dimmed)$hostname $directory$git_branch$git_status$git_state$character"
+add_newline = false
+
+[status]
+disabled = false
+format = '[\[$symbol $int\]]($style) '
+
+[[battery.display]]
+threshold = 40
+
+[username]
+disabled = false
+show_always = true
+style_user = "bright-purple"
+format ="[$user]($style)"
+
+[hostname]
+ssh_only = false
+format = "[$hostname]($style)"
+style = "bright-purple"
+trim_at = "."
+disabled = false
+
+[directory]
+truncation_length = 80
+truncation_symbol = "…/"
+
+[git_branch]
+format = "[$symbol$branch]($style) "
+
+[git_status]
+ahead = "⇡${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+behind = "⇣${count}"
+
+#[character]
+#format = "$symbol"
