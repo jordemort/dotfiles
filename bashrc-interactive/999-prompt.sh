@@ -28,7 +28,7 @@ __my_prompt_command()
     fi
 
     # gitify the prompt
-    __git_ps1 "$last_rc ${last_status}${PS1_BEFORE}" "${PS1_AFTER}${window_title}"
+    __git_ps1 "${last_status}${PS1_BEFORE}" "${PS1_AFTER}${window_title}"
   fi
 
   return $last_rc
