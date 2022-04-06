@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [ -z "${mcfly:-}" ]; then
+if [ -z "${MCFLY_SESSION_ID:-}" ]; then
   # load last 1000 lines from history, never truncate, ignore dups
   HISTSIZE=1000
   HISTFILESIZE=
