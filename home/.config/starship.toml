@@ -1,4 +1,4 @@
-format = "$status$battery$container$localip[](purple)$username$hostname[](purple) $directory$git_branch$git_status$git_state$character"
+format = "$status$battery$container$localip[](blue)$username$hostname[  ](fg:black bg:blue)[$directory](bg:blue)[](blue)$git_branch$git_status$git_state$character"
 add_newline = false
 
 [status]
@@ -11,14 +11,14 @@ threshold = 40
 [username]
 disabled = false
 show_always = true
-style_user = "fg:black bg:purple"
-style_root = "fg:black bg:red"
+style_user = "fg:bright-white bg:blue"
+style_root = "fg:bright-white bg:red"
 format ="[$user]($style)"
 
 [hostname]
 ssh_only = false
-format = "[[@](dimmed bg:purple)$hostname]($style)"
-style = "fg:black bg:purple"
+format = "[[@](dimmed bg:blue)$hostname]($style)"
+style = "fg:bright-white bg:blue"
 trim_at = "."
 disabled = false
 
@@ -36,7 +36,8 @@ format = "[$symbol ](style)"
 [directory]
 truncation_length = 80
 truncation_symbol = "…/"
-
+style = "fg:bright-cyan bg:blue"
+read_only_style = "bg:blue"
 [git_branch]
 format = "[$symbol$branch]($style) "
 
