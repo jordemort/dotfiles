@@ -8,7 +8,7 @@ else
   if [ -x /usr/lib/command-not-found ] ; then
     command_not_found=/usr/lib/command-not-found
   elif [ -x /usr/share/command-not-found/command-not-found ]; then
-    command_not_found=/usr/lib/command-not-found
+    command_not_found=/usr/share/command-not-found/command-not-found
   else
     return
   fi
