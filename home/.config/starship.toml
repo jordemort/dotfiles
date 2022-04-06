@@ -1,5 +1,4 @@
-
-format = "$status$battery$localip$username$hostname $directory$git_branch$git_status$git_state$character"
+format = "$status$battery$username$hostname $localip$container$directory$git_branch$git_status$git_state$character"
 add_newline = false
 
 [status]
@@ -22,6 +21,14 @@ style = "bright-purple"
 trim_at = "."
 disabled = false
 
+[localip]
+ssh_only = true
+disabled = false
+
+[container]
+symbol = "🎁"
+format = "[$symbol ](style)"
+
 [directory]
 truncation_length = 80
 truncation_symbol = "…/"
@@ -33,6 +40,3 @@ format = "[$symbol$branch]($style) "
 ahead = "⇡${count}"
 diverged = "⇕⇡${ahead_count}⇣${behind_count}"
 behind = "⇣${count}"
-
-#[character]
-#format = "$symbol"
