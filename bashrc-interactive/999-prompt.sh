@@ -35,7 +35,11 @@ __my_prompt_command()
 }
 
 __configure_prompt() {
-  PROMPT_COMMAND=__my_prompt_command
+  if [ -z "$PROMPT_COMMAND" ]; then
+    PROMPT_COMMAND="__my_prompt_command"
+  else
+    PROMPT_COMMAND="__my_prompt_command;${PROMPT_COMMAND#;}"
+  fi
 
   if "$HOME/.homesick/repos/dotfiles/generated/it2check" 2> /dev/null; then
     # shellcheck source=generated/iterm2_shell_integration.bash

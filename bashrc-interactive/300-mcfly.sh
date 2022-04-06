@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-mcfly=$(type -P mcfly)
-
-if [ -x "$mcfly" ]; then
+if [ -x "$(type -P mcfly)" ]; then
   eval "$(mcfly init bash)"
 fi
