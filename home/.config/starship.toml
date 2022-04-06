@@ -1,5 +1,5 @@
 
-format = "$status$battery$username[@](dimmed)$hostname $directory$git_branch$git_status$git_state$character"
+format = "$status$battery$localip$username$hostname $directory$git_branch$git_status$git_state$character"
 add_newline = false
 
 [status]
@@ -12,12 +12,12 @@ threshold = 40
 [username]
 disabled = false
 show_always = true
-style_user = "bright-purple"
+style_user = "green"
 format ="[$user]($style)"
 
 [hostname]
 ssh_only = false
-format = "[$hostname]($style)"
+format = "[@](dimmed)[$hostname]($style)"
 style = "bright-purple"
 trim_at = "."
 disabled = false
