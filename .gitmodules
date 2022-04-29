@@ -22,3 +22,6 @@
 [submodule "submodules/asdf"]
 	path = submodules/asdf
 	url = https://github.com/asdf-vm/asdf
+[submodule "submodules/iTerm2-shell-integration"]
+	path = submodules/iTerm2-shell-integration
+	url = https://github.com/gnachman/iTerm2-shell-integration

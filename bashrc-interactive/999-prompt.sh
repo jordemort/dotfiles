@@ -41,10 +41,8 @@ __configure_prompt() {
     PROMPT_COMMAND="__my_prompt_command;${PROMPT_COMMAND#;}"
   fi
 
-  if "$HOME/.homesick/repos/dotfiles/generated/it2check" 2> /dev/null; then
-    # shellcheck source=generated/iterm2_shell_integration.bash
-    source "$HOME/.homesick/repos/dotfiles/generated/iterm2_shell_integration.bash"
-  fi
+  # shellcheck source=submodules/iTerm2-shell-integration/shell_integration/bash
+  source "$HOME/.homesick/repos/dotfiles/submodules/iTerm2-shell-integration/shell_integration/bash"
 
   if [ -z "${NO_STARSHIP:-}" ] && [ -x "$(type -P starship)" ]; then
     eval "$(starship init bash)"

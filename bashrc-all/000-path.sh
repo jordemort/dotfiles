@@ -25,10 +25,14 @@ done
 # shellcheck source=submodules/asdf/asdf.sh
 source "$HOME/.homesick/repos/dotfiles/submodules/asdf/asdf.sh"
 
-# always add dotfiles/bin
+# add iterm2 stuff
+path PATH prepend "$HOME/.homesick/repos/dotfiles/submodules/iTerm2-shell-integration/utilities"
+
+# add dotfiles/bin
 path PATH prepend "$HOME/.homesick/repos/dotfiles/bin"
 
-# always add $HOME/bin, even if it doesn't exist yet
+# add (and create, if necessary) local bins
+mkdir -p "$HOME/.local/bin" "$HOME/bin"
 path PATH prepend "$HOME/.local/bin"
 path PATH prepend "$HOME/bin"
 
