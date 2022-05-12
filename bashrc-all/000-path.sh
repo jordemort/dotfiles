@@ -36,5 +36,10 @@ mkdir -p "$HOME/.local/bin" "$HOME/bin"
 path PATH prepend "$HOME/.local/bin"
 path PATH prepend "$HOME/bin"
 
+# if ~/.venv is a thing put it in path
+if [ -d "$HOME/.venv/bin" ]; then
+  path PATH prepend "$HOME/.venv/bin"
+fi
+
 # make sure things are tidy
 path PATH clean --real
