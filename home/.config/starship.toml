@@ -1,10 +1,10 @@
-format = "$status$battery$container$localip[](#007ACC)$username$hostname[  ](fg:black bg:#007ACC)[$directory](bg:#007ACC)[](#007ACC)$git_branch$git_status$git_state$character"
+format = "$battery$container$localip$git_branch$git_status$git_state[](#007ACC)$username$hostname[  ](fg:black bg:#007ACC)[$directory](bg:#007ACC)[](#007ACC)$status$character"
 add_newline = false
 
 [status]
 disabled = false
 style = "fg:bright-white bg:bright-red"
-format = '[](bright-red)[$int!]($style)[](bright-red) '
+format = ' [](bright-red)[$int!]($style)[](bright-red) '
 
 [[battery.display]]
 threshold = 40
@@ -43,12 +43,12 @@ format = "[$path]($style)[$read_only]($read_only_style)"
 
 [git_branch]
 style = "bg:purple fg:bright-white"
-format = " [](purple)[$symbol$branch]($style)[](purple)"
+format = "[](purple)[$symbol$branch]($style)[](purple)"
 
 [git_status]
 # style = "bg:bright-red fg:bright-white"
 # format = "([](bright-red)[$all_status$ahead_behind]($style)[](bright-red))"
-format = "([ $all_status$ahead_behind]($style))"
+format = "( [$all_status$ahead_behind]($style) )"
 ahead = "⇡${count}"
 diverged = "⇕⇡${ahead_count}⇣${behind_count}"
 behind = "⇣${count}"
