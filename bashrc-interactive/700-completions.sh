@@ -2,9 +2,13 @@
 
 # load bash_completion if it isn't already loaded for us
 if [ -z "$BASH_COMPLETION" ] ; then
-  if (( BASH_VERSINFO[0] > 3 )) && [ -e /usr/local/etc/bash_completion ] ; then
+  if (( BASH_VERSINFO[0] > 3 )) ; then
     # check for one installed by homebrew first
-    source /usr/local/etc/bash_completion
+    if [ -e /usr/local/etc/bash_completion ] ; then
+      source /usr/local/etc/bash_completion
+    elif [ -e /opt/homebrew/etc/profile.d/bash_completion.sh ] ; then
+      source /opt/homebrew/etc/profile.d/bash_completion.sh
+    fi
   elif [ -e /etc/bash_completion ] ; then
     # otherwise maybe it's here?
     source /etc/bash_completion

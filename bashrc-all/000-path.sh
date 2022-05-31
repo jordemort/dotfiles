@@ -11,8 +11,10 @@ fi
 # add these to PATH if they exist
 maybe_path=(
   "/usr/local/opt/coreutils/libexec/gnubin"
+  "/opt/homebrew/opt/coreutils/libexec/gnubin"
   "/opt/X11/bin"
   "/usr/local/MacGPG2/bin"
+  "/opt/homebrew/bin"
 )
 
 for p in "${maybe_path[@]}" ; do
