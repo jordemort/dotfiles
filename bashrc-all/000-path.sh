@@ -14,6 +14,7 @@ maybe_path=(
   "/opt/homebrew/opt/coreutils/libexec/gnubin"
   "/opt/X11/bin"
   "/usr/local/MacGPG2/bin"
+  "/opt/homebrew/opt/mysql-client/bin"
   "/opt/homebrew/bin"
 )
 
