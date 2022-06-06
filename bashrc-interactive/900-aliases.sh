@@ -23,6 +23,10 @@ else
   fi
 fi
 
+# load broot if available
+if [ -n "$(type -P broot)" ] ; then
+  eval "$(broot --print-shell-function bash)"
+fi
 
 # colorize GNU grep
 if grep --version 2>/dev/null | grep -q GNU ; then
