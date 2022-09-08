@@ -17,6 +17,8 @@ maybe_path=(
   "/opt/homebrew/opt/mysql-client/bin"
   "/opt/homebrew/opt/libpq/bin"
   "/opt/homebrew/bin"
+  "/opt/homebrew/opt/ruby/bin"
+  "/opt/homebrew/lib/ruby/gems/3.1.0/bin"
 )
 
 for p in "${maybe_path[@]}" ; do
