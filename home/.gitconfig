@@ -42,3 +42,6 @@ defaultBranch = main
 
 [submodule]
 recurse = true
+
+[pull]
+rebase = false
