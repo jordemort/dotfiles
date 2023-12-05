@@ -45,3 +45,6 @@ recurse = true
 
 [pull]
 rebase = false
+
+[includeIf "gitdir:~/Work/"]
+path = ~/.config/git/danger
