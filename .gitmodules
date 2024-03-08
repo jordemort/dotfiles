@@ -7,12 +7,12 @@
 [submodule "submodules/open-bash-completion"]
 	path = submodules/open-bash-completion
 	url = https://github.com/moshen/open-bash-completion
-[submodule "submodules/secrets.sh"]
-	path = submodules/secrets.sh
-	url = https://github.com/jordemort/secrets.sh
 [submodule "submodules/path"]
 	path = submodules/path
 	url = https://github.com/jordemort/path
 [submodule "submodules/iTerm2-shell-integration"]
 	path = submodules/iTerm2-shell-integration
 	url = https://github.com/gnachman/iTerm2-shell-integration
+[submodule "submodules/diff-so-fancy"]
+	path = submodules/diff-so-fancy
+	url = https://github.com/so-fancy/diff-so-fancy
