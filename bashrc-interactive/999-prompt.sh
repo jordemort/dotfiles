@@ -10,7 +10,7 @@ esac
 
 __my_prompt_command()
 {
-  local last_rc=$? last_status="" window_title=""
+  local last_rc=$? last_status=""
 
   # append to history file so we never lose anything
   if [ -z "${MCFLY_SESSION_ID:-}" ] ; then
@@ -21,15 +21,13 @@ __my_prompt_command()
     echo -ne "\033]0;$USER@$HOSTNAME: $PWD\007"
   fi
 
-  if [ -z "${STARSHIP_SESSION_KEY:-}" ]; then
-    # add a red ! to the beginning if the last command failed
-    if [ "$last_rc" != "0" ] ; then
-      last_status="\[${COLOR_LIGHT_RED}\]${last_rc}! "
-    fi
-
-    # gitify the prompt
-    __git_ps1 "${last_status}${PS1_BEFORE}" "${PS1_AFTER}${window_title}"
+  # add a red ! to the beginning if the last command failed
+  if [ "$last_rc" != "0" ] ; then
+    last_status="\[${COLOR_LIGHT_RED}\]${last_rc}! "
   fi
+
+  # gitify the prompt
+  __git_ps1 "${last_status}${PS1_BEFORE}" "${PS1_AFTER}"
 
   return $last_rc
 }
@@ -44,24 +42,20 @@ __configure_prompt() {
   # shellcheck source=submodules/iTerm2-shell-integration/shell_integration/bash
   source "$HOME/.homesick/repos/dotfiles/submodules/iTerm2-shell-integration/shell_integration/bash"
 
-  if [ -z "${NO_STARSHIP:-}" ] && [ -x "$(type -P starship)" ]; then
-    eval "$(starship init bash)"
-  else
-    # shellcheck disable=SC2034
-    GIT_PS1_SHOWDIRTYSTATE=1
-    # shellcheck disable=SC2034
-    GIT_PS1_SHOWUNTRACKEDFILES=1
-    # shellcheck disable=SC2034
-    GIT_PS1_SHOWUPSTREAM=verbose
-    # shellcheck disable=SC2034
-    GIT_PS1_SHOWCOLORHINTS=1
+  # shellcheck disable=SC2034
+  GIT_PS1_SHOWDIRTYSTATE=1
+  # shellcheck disable=SC2034
+  GIT_PS1_SHOWUNTRACKEDFILES=1
+  # shellcheck disable=SC2034
+  GIT_PS1_SHOWUPSTREAM=verbose
+  # shellcheck disable=SC2034
+  GIT_PS1_SHOWCOLORHINTS=1
 
-    # shellcheck source=generated/git-prompt.sh
-    source "$HOME/.homesick/repos/dotfiles/generated/git-prompt.sh"
+  # shellcheck source=generated/git-prompt.sh
+  source "$HOME/.homesick/repos/dotfiles/generated/git-prompt.sh"
 
-    PS1_BEFORE="\[${COLOR_USER}\]\u\[${COLOR_GRAY}\]@\[${COLOR_HOST}\]\h\[${COLOR_GRAY}\]:\[${COLOR_NONE}\]\w"
-    PS1_AFTER="\[${COLOR_GRAY}\]\$\[${COLOR_NONE}\] "
-  fi
+  PS1_BEFORE="\[${COLOR_USER}\]\u\[${COLOR_GRAY}\]@\[${COLOR_HOST}\]\h\[${COLOR_GRAY}\]:\[${COLOR_NONE}\]\w"
+  PS1_AFTER="\[${COLOR_GRAY}\]\$\[${COLOR_NONE}\] "
 }
 
 __configure_prompt

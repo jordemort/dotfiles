@@ -2,7 +2,7 @@
 
 # for local config, secrets, etc
 if [ -e "$HOME/.bashrc.local" ] ; then
-  # shellcheck disable=SC1090
+  # shellcheck disable=SC1091
   . "$HOME/.bashrc.local"
 fi
 

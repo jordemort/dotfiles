@@ -27,10 +27,6 @@ for p in "${maybe_path[@]}" ; do
   fi
 done
 
-# source asdf
-# shellcheck source=submodules/asdf/asdf.sh
-source "$HOME/.homesick/repos/dotfiles/submodules/asdf/asdf.sh"
-
 # add iterm2 stuff
 path PATH prepend "$HOME/.homesick/repos/dotfiles/submodules/iTerm2-shell-integration/utilities"
 

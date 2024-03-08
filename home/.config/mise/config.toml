@@ -1,0 +1,15 @@
+[tools]
+delta = "latest"
+difftastic = "latest"
+hub = "latest"
+jq = "latest"
+mcfly = "latest"
+lsd = "latest"
+shfmt = "latest"
+shellcheck = "latest"
+ripgrep = "latest"
+
+[plugins]
+difftastic = "https://github.com/jordemort/asdf-difftastic"
+lsd = "https://github.com/mise-plugins/asdf-lsd"
+mcfly = "https://github.com/gwelican/asdf-mcfly"

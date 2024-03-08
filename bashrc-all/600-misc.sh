@@ -9,10 +9,6 @@ export LESS=-XMR
 # use lessopen
 export LESSOPEN="|$DOTFILES/submodules/lesspipe/lesspipe.sh %s"
 
-if [ -n "$(type -P pygmentize)" ] ; then
-  export LESSCOLORIZER=pygmentize
-fi
-
 # set debian env based on git
 export DEBFULLNAME=$(git config --global user.name)
 export DEBEMAIL=$(git config --global user.email)
