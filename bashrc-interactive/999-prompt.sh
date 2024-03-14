@@ -54,8 +54,19 @@ __configure_prompt() {
   # shellcheck source=generated/git-prompt.sh
   source "$HOME/.homesick/repos/dotfiles/generated/git-prompt.sh"
 
-  PS1_BEFORE="\[${COLOR_USER}\]\u\[${COLOR_GRAY}\]@\[${COLOR_HOST}\]\h\[${COLOR_GRAY}\]:\[${COLOR_NONE}\]\w"
-  PS1_AFTER="\[${COLOR_GRAY}\]\$\[${COLOR_NONE}\] "
+  PS1_BEFORE="\[\033[7m${COLOR_HOST}\]"
+
+  if [ -n "${SSH_CONNECTION:-}" ] ; then
+    PS1_BEFORE="$PS1_BEFORE 🐚"
+  fi
+
+  PS1_BEFORE="$PS1_BEFORE \h \[${COLOR_NONE}\033[7m\] \w \[${COLOR_NONE}\]"
+
+  if [ "$USER" != "jordan" ] ; then
+    PS1_BEFORE="\[\033[7m${COLOR_USER}\] \u $PS1_BEFORE"
+  fi
+
+  PS1_AFTER="\n\[${COLOR_LIGHT_PURPLE}\]\$\[${COLOR_NONE}\] "
 }
 
 __configure_prompt
