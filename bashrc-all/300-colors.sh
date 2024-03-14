@@ -23,22 +23,21 @@ COLOR_LIGHT_CYAN='\033[1;36m'
 COLOR_WHITE='\033[1;37m'
 
 if [[ $TERM =~ "256color" ]]; then
-  # hand picked list of "readable" colors
-  # shellcheck disable=SC2207
-  DYNAMIC_COLORS=($(seq 3 6) 10 $(seq 12 14) $(seq 22 45) $(seq 58 81) $(seq 99 112) $(seq 124 153) $(seq 160 187) $(seq 196 219))
-  BEFORE_DYNAMIC_COLOR='38;5;'
+	# hand picked list of "readable" colors
+	# shellcheck disable=SC2207
+	DYNAMIC_COLORS=($(seq 3 6) 10 $(seq 12 14) $(seq 22 45) $(seq 58 81) $(seq 99 112) $(seq 124 153) $(seq 160 187) $(seq 196 219))
+	BEFORE_DYNAMIC_COLOR='38;5;'
 else
-  DYNAMIC_COLORS=("0;33" "0;34" "0;35" "0;36" "1;32" "1;34" "1;35" "1;36")
-  BEFORE_DYNAMIC_COLOR=''
+	DYNAMIC_COLORS=("0;33" "0;34" "0;35" "0;36" "1;32" "1;34" "1;35" "1;36")
+	BEFORE_DYNAMIC_COLOR=''
 fi
 
 # generate unique colors for user and host
-function color_for_string()
-{
-  local checksum index
-  checksum=$(cksum <<< "$1" | cut -c2-5 | sed s/^0//)
-  index=$((checksum % ${#DYNAMIC_COLORS[@]}))
-  echo '\033['${BEFORE_DYNAMIC_COLOR}${DYNAMIC_COLORS[${index}]}'m'
+function color_for_string() {
+	local checksum index
+	checksum=$(cksum <<<"$1" | cut -c2-5 | sed s/^0//)
+	index=$((checksum % ${#DYNAMIC_COLORS[@]}))
+	echo '\033['${BEFORE_DYNAMIC_COLOR}${DYNAMIC_COLORS[${index}]}'m'
 }
 
 COLOR_USER=$(color_for_string "$USER")
@@ -49,6 +48,6 @@ alias colors="set | grep '^COLOR_' | sort"
 
 # enable color support of ls and also add handy aliases
 dircolors=$(type -P dircolors)
-if [ ! -z "$dircolors" ] ; then
-  eval "$(dircolors -b)"
+if [ ! -z "$dircolors" ]; then
+	eval "$(dircolors -b)"
 fi
