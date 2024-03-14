@@ -56,9 +56,9 @@ __configure_prompt() {
 
   PS1_BEFORE="\[\033[7m${COLOR_HOST}\]"
 
-  if [ -n "${SSH_CONNECTION:-}" ] ; then
-    PS1_BEFORE="$PS1_BEFORE 🐚"
-  fi
+  #if [ -n "${SSH_CONNECTION:-}" ] ; then
+  #  PS1_BEFORE="$PS1_BEFORE 🐚"
+  #fi
 
   PS1_BEFORE="$PS1_BEFORE \h \[${COLOR_NONE}\033[7m\] \w \[${COLOR_NONE}\]"
 
