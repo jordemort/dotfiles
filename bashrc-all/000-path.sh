@@ -10,15 +10,11 @@ fi
 
 # add these to PATH if they exist
 maybe_path=(
-  "/usr/local/opt/coreutils/libexec/gnubin"
-  "/opt/homebrew/opt/coreutils/libexec/gnubin"
-  "/opt/X11/bin"
-  "/usr/local/MacGPG2/bin"
   "/opt/homebrew/opt/mysql-client/bin"
   "/opt/homebrew/opt/libpq/bin"
   "/opt/homebrew/bin"
-  "/opt/homebrew/opt/ruby/bin"
-  "/opt/homebrew/lib/ruby/gems/3.1.0/bin"
+  "/opt/homebrew/opt/coreutils/libexec/gnubin"
+  "/opt/X11/bin"
 )
 
 for p in "${maybe_path[@]}" ; do
@@ -26,6 +22,12 @@ for p in "${maybe_path[@]}" ; do
     path PATH prepend "$p"
   fi
 done
+
+if [ -x /opt/homebrew/opt/ruby/bin/ruby ]; then
+  ruby_version=$(basename "$(readlink -f "$(dirname "$(readlink -f /opt/homebrew/opt/ruby/bin/ruby)")"/..)")
+  path PATH prepend /opt/homebrew/opt/ruby/bin
+  path PATH prepend "/opt/homebrew/lib/ruby/gems/$ruby_version/bin"
+fi
 
 # add iterm2 stuff
 path PATH prepend "$HOME/.homesick/repos/dotfiles/submodules/iTerm2-shell-integration/utilities"
@@ -38,9 +40,9 @@ mkdir -p "$HOME/.local/bin" "$HOME/bin"
 path PATH prepend "$HOME/.local/bin"
 path PATH prepend "$HOME/bin"
 
-# if ~/.venv is a thing put it in path
-if [ -d "$HOME/.venv/bin" ]; then
-  path PATH prepend "$HOME/.venv/bin"
+# add updated git install on danger design box
+if [ -x /data/git/latest/git ]; then
+  path PATH prepend /data/git/latest
 fi
 
 # make sure things are tidy
