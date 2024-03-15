@@ -71,4 +71,4 @@ __configure_prompt() {
 __configure_prompt
 
 # shellcheck disable=SC1090
-[[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path bash)"
+[[ "$TERM_PROGRAM" == "vscode" ]] && [ -n "$(type -P code)" ] && . "$(code --locate-shell-integration-path bash)"
