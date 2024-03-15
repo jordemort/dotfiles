@@ -24,7 +24,7 @@ light = false   # set to true if you're in a terminal w/ a light background colo
 side-by-side = true
 
 [merge]
-conflictstyle = zdiff3
+conflictstyle = diff3
 
 [diff]
 colorMoved = default
