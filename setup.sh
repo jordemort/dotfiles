@@ -34,3 +34,5 @@ if [ ! -e "$HOME/.gnupg/pubring.kbx" ]; then
 	gpg --import <"$preferred_dir/misc/key.pub"
 	echo "304E3D8D4A14C451DBA5582AC341950C47B6CE14:6:" | gpg --import-ownertrust
 fi
+
+curl https://mise.run | sh
