@@ -1,6 +1,23 @@
+set minibar
+set tabsize 2
+set tabstospaces
+set linenumbers
 set autoindent
 set constantshow
 set historylog
-set keycolor brightwhite,blue
-set statuscolor brightyellow,blue
-set titlecolor brightyellow,blue
+set keycolor        brightwhite,blue
+set statuscolor     brightyellow,blue
+set titlecolor      brightyellow,blue
+set indicator       # side bar for indicating cur position
+set smarthome       # `Home` jumps to line start first
+set afterends       # `Ctrl+Right` move to word ends instead of word starts
+set wordchars "_"   # recognize '_' as part of a word
+set zap             # delete selected text as a whole
+set atblanks        # soft wrap at blank chars
+set historylog      # remember search history
+set multibuffer     # read files into multibuffer instead of insert
+set mouse           # enable mouse support
+set locking         # vim-like file locks
+
+unbind ^J               main  # for those who rarely use justify
+unbind M-J              main  # for those who rarely use justify
