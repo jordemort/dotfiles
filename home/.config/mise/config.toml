@@ -9,7 +9,7 @@ shfmt = "latest"
 shellcheck = "latest"
 ripgrep = "latest"
 
-[plugins]
-difftastic = "https://github.com/jordemort/asdf-difftastic"
-lsd = "https://github.com/mise-plugins/asdf-lsd"
-mcfly = "https://github.com/gwelican/asdf-mcfly"
+[alias]
+difftastic = "asdf:https://github.com/jordemort/asdf-difftastic"
+lsd = "asdf:https://github.com/mise-plugins/asdf-lsd"
+mcfly = "asdf:https://github.com/gwelican/asdf-mcfly"
