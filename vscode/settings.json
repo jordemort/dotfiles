@@ -1,0 +1,51 @@
+{
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "mkhl.shfmt"
+  },
+  "editor.fontFamily": "'Cascadia Code NF', 'CaskaydiaCove Nerd Font', 'Courier New', monospace",
+  "editor.fontLigatures": "'calt', 'liga', 'ss01'",
+  "editor.fontSize": 16,
+  "editor.fontVariations": true,
+  "editor.formatOnSave": true,
+  "editor.renderWhitespace": "all",
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "comment",
+        "settings": {
+          "fontStyle": "italic"
+        }
+      }
+    ]
+  },
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "git.autofetch": true,
+  "git.enableCommitSigning": true,
+  "githubPullRequests.pushBranch": "always",
+  "redhat.telemetry.enabled": false,
+  "shellcheck.customArgs": [
+    "-x"
+  ],
+  "shellcheck.enableQuickFix": true,
+  "shellcheck.useWorkspaceRootAsCwd": true,
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.cursorStyle": "underline",
+  "terminal.integrated.fontLigatures": true,
+  "terminal.integrated.fontSize": 16,
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#070020",
+    "editor.background": "#000",
+    "sideBar.background": "#070020",
+    "tab.inactiveBackground": "#000",
+    "terminal.background": "#000",
+    "titleBar.activeBackground": "#070020",
+    "titleBar.inactiveBackground": "#000"
+  },
+  "workbench.iconTheme": "file-icons",
+  "workbench.startupEditor": "none"
+}
