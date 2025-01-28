@@ -1,0 +1,89 @@
+* {
+    font-family: "Atkinson Hyperlegible";
+}
+
+.content {
+    padding: 1em;
+    padding-left: 3em;
+    padding-right: 3em;
+}
+
+.cdm {
+    background-color: #000;
+}
+
+.header {
+    background-color: #300060;
+    padding: 1em;
+}
+
+body.ttrss_main a {
+    color: rgb(148, 148, 255);
+}
+
+.cdm.expanded .header a.title {
+    font-family: "Atkinson Hyperlegible";
+    font-weight: bold;
+    font-size: 22px;
+    word-break: break-word;
+}
+
+div.content-inner p {
+    font-family: Georgia;
+    font-size: 20px;
+}
+
+.cdm.expandable.active .header[data-is-stuck],
+.cdm.expanded .header[data-is-stuck] {
+    background: rgba(68, 20, 116, 0.9) !important;
+    ;
+}
+
+.cdm.expandable.active .header[data-is-stuck],
+.cdm.expanded .header[data-is-stuck] {
+    background: rgba(68, 20, 116, 0.9) !important;
+    ;
+}
+
+body.flat.ttrss_main #feeds-holder {
+    background-color: #070020;
+}
+
+body.ttrss_main #feeds-holder #feedTree .dijitTreeNode .dijitTreeRow .counterNode {
+    background-color: #000;
+    border: 1px solid grey;
+    padding: 1px;
+}
+
+.cdm .header .feed {
+    font-size: 16px;
+}
+
+.cdm .header .author {
+    font-size: 16px;
+    float: right;
+    padding: 0.5em;
+}
+
+.flat .dijitContentPane {
+    background-color: #000;
+}
+
+.flat .dijitComboButton.alt-primary .dijitButtonNode {
+    background-color: rgb(72, 72, 192);
+    border: 1px solid rgb(72, 72, 192);
+}
+
+.flat .dijitButton.alt-info .dijitButtonNode {
+    background-color: rgb(72, 72, 192);
+    border: 1px solid rgb(72, 72, 192);
+}
+
+.flat .dijitButton.alt-primary .dijitButtonNode {
+    background-color: rgb(72, 72, 192);
+    border: 1px solid rgb(72, 72, 192);
+}
+
+.flat .dijitAccordionInnerContainerSelected .dijitAccordionTitle {
+    background-color: rgb(72, 72, 192);
+}
