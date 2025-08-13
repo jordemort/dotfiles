@@ -8,16 +8,13 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "collaboration_panel": {
-    "dock": "left"
+    "button": false
   },
   "icon_theme": "VSCode Icons (Dark)",
   "ssh_connections": [
     {
       "host": "walnut.webb.haus",
       "projects": [
-        {
-          "paths": ["/home/jordan/Source/nintendo_posts.csv"]
-        },
         {
           "paths": ["/home/jordan/Work/alma-bootc-vdi"]
         },
@@ -38,5 +35,10 @@
   "disable_ai": true,
   "ui_font_family": "Cascadia Code NF",
   "buffer_font_family": "Cascadia Code NF",
-  "terminal": { "line_height": "standard" }
+  "terminal": {
+    "line_height": { "custom": 1.2 },
+    "cursor_shape": "underline",
+    "blinking": "on",
+    "toolbar": { "breadcrumbs": true }
+  }
 }
