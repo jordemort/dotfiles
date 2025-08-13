@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-# so i can still git diff without delta installed
-if [ -n "$(type -P delta)" ]; then
-	exec delta
-else
-	exec diff-so-fancy | less --tabs=4 -RF
-fi
