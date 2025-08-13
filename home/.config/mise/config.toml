@@ -9,6 +9,7 @@ shfmt = "latest"
 shellcheck = "latest"
 ripgrep = "latest"
 "aqua:reviewdog/reviewdog" = "latest"
+starship = "latest"
 
 [alias]
 delta = "aqua:dandavison/delta"
