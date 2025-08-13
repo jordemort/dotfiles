@@ -1,10 +1,13 @@
 [user]
 email = jordan@jordemort.dev
 name = Jordan Webb
-signingkey = ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDIqc7hWVQ0bhscBKzwgOIa4KqzQ5UHLlAErXHSxyVUtbO3PGaJ73Sc0zjshv3DNm3sy7F2Evw3jFv6Gn/A4H5Xsq6I+T5rPFsngi55GOFDYyVxddAPgkizlesRqcRB1tneeqvT/Cs1ng1fhr7GwlB4ZN4IyxjISNTUiAX3fu/6Ig+Kd7NK9I/lDcXqPTNqKsEuBk4dYEmdHyZJhv2q54BAnPbpX6V6B6eMJAkscTva3kfAzUFIXNESLhtkG4/fhF5ollnDT5KL0PM4Bf9VzsXAQbOh6hRfsrtXH6T+TRObkFZ9VtF4TaZ+mEcXoEUkGuYFkEBsOpvck9OXk0F5r4D8e/lB9RMzgIQpi82lVbeJUXOMAdGI+X0+gmYqWRa8/knCIn3A5HpYbos03L6pNmsPK5obMD+1KjkFdsrpDHfAu8RlwismGNpdXEm91DELUxahrG4TW1v/XRda4vfB31fXbJWBYUiekbrZxXIOv4CJld7j8bpc6evHaf8O3sVkOoSy5U8drUtk6MLgq04/TpDhfDJWvLjXW/2LABZ6ZBmJpTB1ipucIoTypVJoxSSj4X5p3PHVs4MH3itvsLFyPyRCjLyTkt9FC+Sehxyruc8z3a8IaeZoER1zIqYlx4Pf49rPLHUvQCFI+RwbtwgMJ1bLE0ruKZ09vkmfORzj+my3hQ== cardno:7192017
+signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIKbUt9tZuN+qTX1pP68wCr83lA53UUY54n2BlpYZNUA
 
 [gpg]
 format = ssh
+
+[gpg.ssh]
+allowedSignersFile = ~/.config/git/allowed_signers
 
 [commit]
 gpgsign = true

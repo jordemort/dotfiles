@@ -24,10 +24,7 @@ for p in "${maybe_path[@]}"; do
 done
 
 if [ -x /opt/homebrew/opt/ruby/bin/ruby ]; then
-	# shellcheck disable=SC2016
-	ruby_version=$(/opt/homebrew/opt/ruby/bin/ruby -e 'puts $LOAD_PATH[0].split("/")[-1]')
 	path PATH prepend /opt/homebrew/opt/ruby/bin
-	path PATH prepend "/opt/homebrew/lib/ruby/gems/$ruby_version/bin"
 fi
 
 # add iterm2 stuff

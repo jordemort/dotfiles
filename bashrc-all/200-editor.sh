@@ -3,27 +3,21 @@
 EDITOR="nano"
 
 # Look for codium
-codium=$(type -P codium)
+zed=$(type -P zed)
 
-if [ -x "$codium" ] && [ -n "${SSH_CONNECTION:-}" ]; then
-	codium_dir=$(cd "$(dirname "$(which codium)")" && echo $(basename $(pwd)))
-	if [ "$codium_dir" != "remote-cli" ]; then
-		# Avoid using codium installed on remote system over SSH
-		codium=""
-	fi
-fi
-
-if [ -x "$codium" ]; then
+if [ -x "$zed" ]; then
 	# If we have it, alias everything over there
-	EDITOR="codium -w"
-	alias code=codium
-	alias nano=codium
-	alias subl=codium
+	EDITOR="zed -w"
+	alias codium=zed
+	alias code=zed
+	alias nano=zed
+	alias subl=zed
 else
 	# Otherwise, we want nano
 	alias codium=nano
 	alias code=nano
 	alias subl=nano
+	alias zed=nano
 fi
 
 VISUAL=$EDITOR

@@ -8,6 +8,7 @@ lsd = "latest"
 shfmt = "latest"
 shellcheck = "latest"
 ripgrep = "latest"
+"aqua:reviewdog/reviewdog" = "latest"
 
 [alias]
 delta = "aqua:dandavison/delta"
@@ -19,3 +20,7 @@ lsd = "aqua:lsd-rs/lsd"
 shfmt = "aqua:mvdan/sh"
 shellcheck = "aqua:koalaman/shellcheck"
 ripgrep = "aqua:BurntSushi/ripgrep"
+
+[settings]
+experimental = true
+idiomatic_version_file_enable_tools = ["python"]
