@@ -10,6 +10,7 @@ shellcheck = "latest"
 ripgrep = "latest"
 "aqua:reviewdog/reviewdog" = "latest"
 starship = "latest"
+uv = "latest"
 
 [alias]
 delta = "aqua:dandavison/delta"
